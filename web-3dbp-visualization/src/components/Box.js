@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { useThree } from '@react-three/fiber';
-import { useGesture } from 'react-use-gesture';
-import { useSpring, a } from 'react-spring/three';
-import { Text } from '@react-three/drei';
+import React from 'react';
+import { Html } from '@react-three/drei';
 
 
 export default function Box(props) {
@@ -25,13 +22,10 @@ export default function Box(props) {
     return (
         <mesh {...props} position={props.position} >
             <boxGeometry args={props.dimensions} />
-            <Text
-                color="black" // default
-                anchorX="center" // default
-                anchorY="middle" // default
-            >
-                hello world!
-            </Text>
+            <Html center distanceFactor={2}>
+                <p>id : {props.idp} </p>
+                <p> Weight : {props.weight}</p>
+            </Html>
             <meshBasicMaterial color={props.color} />
         </mesh>
     )
