@@ -1,0 +1,3130 @@
+[
+    {
+        "subgroup_id": 0,
+        "length": 1.25,
+        "width": 1.05,
+        "height": 0.53,
+        "volume": 0.696,
+        "weight": 40.129,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "OPCSA",
+        "dst_code": 13,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 50,
+        "taxability": 40.129,
+        "orientation": 1,
+        "mass_center": [
+            1.9250000000000003,
+            0.265,
+            0.625
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                1.3124999999999998,
+                40.129
+            ]
+        ],
+        "pp_in": [
+            2.45,
+            0.0,
+            0.0
+        ],
+        "pp_out": [
+            [
+                1.4000000000000004,
+                0.533,
+                0.0
+            ],
+            [
+                1.4000000000000004,
+                0.0,
+                1.253
+            ],
+            [
+                2.4530000000000003,
+                0.0,
+                0.0
+            ]
+        ],
+        "in_id": 0
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.03,
+        "width": 0.35,
+        "height": 0.98,
+        "volume": 0.353,
+        "weight": 45.435,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Melilla",
+        "dst_code": 16,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 56,
+        "taxability": 45.435,
+        "orientation": 1,
+        "mass_center": [
+            0.175,
+            0.49,
+            0.515
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.3605,
+                45.435
+            ]
+        ],
+        "pp_in": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "pp_out": [
+            [
+                0.0,
+                0.983,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                1.033
+            ],
+            [
+                0.353,
+                0.0,
+                0.0
+            ]
+        ],
+        "in_id": 1
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.48,
+        "width": 0.44,
+        "height": 1.34,
+        "volume": 0.873,
+        "weight": 49.778,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial T\u00e1ctica",
+        "dst_code": 1,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 66,
+        "taxability": 49.778,
+        "orientation": 3,
+        "mass_center": [
+            0.573,
+            0.67,
+            0.74
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.6511999999999999,
+                49.778
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            0.0
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.343,
+                0.0
+            ],
+            [
+                0.353,
+                0.0,
+                1.4829999999999999
+            ],
+            [
+                0.7959999999999999,
+                0.0,
+                0.0
+            ]
+        ],
+        "in_id": 2
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.98,
+        "width": 0.73,
+        "height": 0.9,
+        "volume": 0.644,
+        "weight": 36.615,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono nueva monta\u00f1a",
+        "dst_code": 9,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 60,
+        "taxability": 36.615,
+        "orientation": 1,
+        "mass_center": [
+            1.7650000000000003,
+            0.45,
+            1.7429999999999999
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.7153999999999998,
+                36.615
+            ]
+        ],
+        "pp_in": [
+            1.4000000000000004,
+            0.0,
+            1.253
+        ],
+        "pp_out": [
+            [
+                1.4000000000000004,
+                0.903,
+                1.253
+            ],
+            [
+                1.4000000000000004,
+                0.0,
+                2.2359999999999998
+            ],
+            [
+                2.1330000000000005,
+                0.0,
+                1.253
+            ]
+        ],
+        "in_id": 3
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.12,
+        "width": 0.41,
+        "height": 1.38,
+        "volume": 0.634,
+        "weight": 25.674,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Centrolid",
+        "dst_code": 6,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 32,
+        "taxability": 25.674,
+        "orientation": 4,
+        "mass_center": [
+            1.6050000000000004,
+            1.2229999999999999,
+            0.56
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.4592000000000002,
+                25.674
+            ]
+        ],
+        "pp_in": [
+            1.4000000000000004,
+            0.533,
+            0.0
+        ],
+        "pp_out": [
+            [
+                1.4000000000000004,
+                1.9159999999999997,
+                0.0
+            ],
+            [
+                1.4000000000000004,
+                0.5329999999999999,
+                1.123
+            ],
+            [
+                1.8130000000000004,
+                0.5329999999999999,
+                0.0
+            ]
+        ],
+        "in_id": 4
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.47,
+        "width": 0.34,
+        "height": 1.58,
+        "volume": 0.252,
+        "weight": 10.897,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial del Esp\u00edritu Santo Oviedo",
+        "dst_code": 8,
+        "frozen": 0,
+        "priority": 9,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 63,
+        "taxability": 10.897,
+        "orientation": 5,
+        "mass_center": [
+            1.9830000000000003,
+            1.323,
+            0.235
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.15980000000000003,
+                10.897
+            ]
+        ],
+        "pp_in": [
+            1.8130000000000004,
+            0.5329999999999999,
+            0.0
+        ],
+        "pp_out": [
+            [
+                1.8130000000000004,
+                2.116,
+                0.0
+            ],
+            [
+                1.8130000000000004,
+                0.5329999999999999,
+                0.473
+            ],
+            [
+                2.1560000000000006,
+                0.5329999999999999,
+                0.0
+            ]
+        ],
+        "in_id": 5
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.85,
+        "width": 0.82,
+        "height": 1.21,
+        "volume": 0.843,
+        "weight": 36.288,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono do Tambre",
+        "dst_code": 7,
+        "frozen": 0,
+        "priority": 9,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 2,
+        "taxability": 36.288,
+        "orientation": 4,
+        "mass_center": [
+            0.7629999999999999,
+            0.605,
+            1.908
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.6969999999999997,
+                36.288
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            1.4829999999999999
+        ],
+        "pp_out": [
+            [
+                0.3529999999999999,
+                1.2129999999999999,
+                1.4829999999999999
+            ],
+            [
+                0.3529999999999999,
+                0.0,
+                2.336
+            ],
+            [
+                1.1759999999999997,
+                0.0,
+                1.4829999999999999
+            ]
+        ],
+        "in_id": 6
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.82,
+        "width": 0.86,
+        "height": 0.64,
+        "volume": 0.451,
+        "weight": 34.782,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 45,
+        "taxability": 34.782,
+        "orientation": 1,
+        "mass_center": [
+            0.7829999999999999,
+            1.533,
+            1.8929999999999998
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.6723999999999999,
+                33.16423255813953
+            ]
+        ],
+        "pp_in": [
+            0.3529999999999999,
+            1.2129999999999999,
+            1.4829999999999999
+        ],
+        "pp_out": [
+            [
+                0.3529999999999999,
+                1.8559999999999999,
+                1.4829999999999999
+            ],
+            [
+                0.3529999999999999,
+                1.2129999999999999,
+                2.306
+            ],
+            [
+                1.2159999999999997,
+                1.2129999999999999,
+                1.4829999999999999
+            ]
+        ],
+        "in_id": 7
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.17,
+        "width": 1.54,
+        "height": 0.66,
+        "volume": 1.189,
+        "weight": 44.52,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial T\u00e1ctica",
+        "dst_code": 1,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 26,
+        "taxability": 44.52,
+        "orientation": 3,
+        "mass_center": [
+            1.123,
+            0.33,
+            2.921
+        ],
+        "subzones": [
+            [
+                1.0,
+                0.9094017094017095,
+                1.63856,
+                40.48656410256411
+            ],
+            [
+                2.0,
+                0.0905982905982905,
+                0.1632399999999998,
+                4.0334358974358935
+            ]
+        ],
+        "pp_in": [
+            0.3529999999999999,
+            0.0,
+            2.336
+        ],
+        "pp_out": [
+            [
+                0.353,
+                0.663,
+                2.336
+            ],
+            [
+                0.353,
+                0.0,
+                3.509
+            ],
+            [
+                1.896,
+                0.0,
+                2.336
+            ]
+        ],
+        "in_id": 8
+    },
+    {
+        "subgroup_id": 1,
+        "length": 1.58,
+        "width": 0.88,
+        "height": 0.33,
+        "volume": 0.459,
+        "weight": 45.862,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Edificio Iwer",
+        "dst_code": 11,
+        "frozen": 0,
+        "priority": 9,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 84,
+        "taxability": 45.862,
+        "orientation": 3,
+        "mass_center": [
+            0.7929999999999999,
+            0.165,
+            4.2989999999999995
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                1.3903999999999999,
+                45.862
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            3.509
+        ],
+        "pp_out": [
+            [
+                0.3529999999999999,
+                0.333,
+                3.5089999999999995
+            ],
+            [
+                0.3529999999999999,
+                0.0,
+                5.092
+            ],
+            [
+                1.2359999999999998,
+                0.0,
+                3.5089999999999995
+            ]
+        ],
+        "in_id": 9
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.49,
+        "width": 0.47,
+        "height": 0.9,
+        "volume": 0.207,
+        "weight": 38.555,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 8,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 9,
+        "taxability": 38.555,
+        "orientation": 1,
+        "mass_center": [
+            1.031,
+            0.45,
+            0.245
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.23030000000000003,
+                38.555
+            ]
+        ],
+        "pp_in": [
+            0.7959999999999999,
+            0.0,
+            0.0
+        ],
+        "pp_out": [
+            [
+                0.7959999999999999,
+                0.903,
+                0.0
+            ],
+            [
+                0.7959999999999999,
+                0.0,
+                0.493
+            ],
+            [
+                1.269,
+                0.0,
+                0.0
+            ]
+        ],
+        "in_id": 10
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.46,
+        "width": 0.31,
+        "height": 1.4,
+        "volume": 0.2,
+        "weight": 46.483,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial T\u00e1ctica",
+        "dst_code": 1,
+        "frozen": 0,
+        "priority": 8,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 94,
+        "taxability": 46.483,
+        "orientation": 3,
+        "mass_center": [
+            0.155,
+            1.6829999999999998,
+            0.23
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.1426,
+                46.483
+            ]
+        ],
+        "pp_in": [
+            0.0,
+            0.983,
+            0.0
+        ],
+        "pp_out": [
+            [
+                0.0,
+                2.386,
+                0.0
+            ],
+            [
+                0.0,
+                0.9829999999999999,
+                0.463
+            ],
+            [
+                0.313,
+                0.9829999999999999,
+                0.0
+            ]
+        ],
+        "in_id": 11
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.96,
+        "width": 0.74,
+        "height": 0.72,
+        "volume": 0.511,
+        "weight": 17.248,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial del Esp\u00edritu Santo Oviedo",
+        "dst_code": 8,
+        "frozen": 0,
+        "priority": 8,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 4,
+        "taxability": 17.248,
+        "orientation": 4,
+        "mass_center": [
+            1.7700000000000005,
+            1.263,
+            1.7329999999999999
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.8030420000000004,
+                19.49728099099099
+            ]
+        ],
+        "pp_in": [
+            1.4000000000000004,
+            0.903,
+            1.253
+        ],
+        "pp_out": [
+            [
+                1.4000000000000004,
+                1.6259999999999997,
+                1.253
+            ],
+            [
+                1.4000000000000004,
+                0.9029999999999999,
+                2.216
+            ],
+            [
+                2.1430000000000007,
+                0.9029999999999999,
+                1.253
+            ]
+        ],
+        "in_id": 12
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.59,
+        "width": 0.97,
+        "height": 0.81,
+        "volume": 1.249,
+        "weight": 30.576,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Edificio Iwer",
+        "dst_code": 11,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 3,
+        "taxability": 30.576,
+        "orientation": 3,
+        "mass_center": [
+            0.8379999999999999,
+            0.738,
+            4.303999999999999
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                1.3903999999999999,
+                27.56459210270375
+            ]
+        ],
+        "pp_in": [
+            0.3529999999999999,
+            0.333,
+            3.5089999999999995
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                1.146,
+                3.5089999999999995
+            ],
+            [
+                0.35299999999999987,
+                0.33299999999999996,
+                5.101999999999999
+            ],
+            [
+                1.3259999999999998,
+                0.33299999999999996,
+                3.5089999999999995
+            ]
+        ],
+        "in_id": 13
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.05,
+        "width": 1.05,
+        "height": 0.33,
+        "volume": 0.364,
+        "weight": 49.85,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono do Tambre",
+        "dst_code": 7,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 8,
+        "taxability": 49.85,
+        "orientation": 2,
+        "mass_center": [
+            0.8779999999999999,
+            1.311,
+            4.034
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                1.0185000000000004,
+                46.05190476190476
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.146,
+            3.5089999999999995
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                1.4789999999999999,
+                3.509
+            ],
+            [
+                0.35299999999999987,
+                1.146,
+                4.562
+            ],
+            [
+                1.406,
+                1.146,
+                3.509
+            ]
+        ],
+        "in_id": 14
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.91,
+        "width": 1.44,
+        "height": 0.62,
+        "volume": 0.812,
+        "weight": 26.698,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial de la Pedrosa",
+        "dst_code": 0,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 47,
+        "taxability": 26.698,
+        "orientation": 4,
+        "mass_center": [
+            1.073,
+            1.789,
+            3.964
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.9554999999999997,
+                19.467291666666664
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.4789999999999999,
+            3.509
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.102,
+                3.509
+            ],
+            [
+                0.353,
+                1.4789999999999999,
+                4.422
+            ],
+            [
+                1.7959999999999998,
+                1.4789999999999999,
+                3.509
+            ]
+        ],
+        "in_id": 15
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.34,
+        "width": 0.46,
+        "height": 0.44,
+        "volume": 0.069,
+        "weight": 37.622,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Palma",
+        "dst_code": 14,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 93,
+        "taxability": 37.622,
+        "orientation": 4,
+        "mass_center": [
+            0.583,
+            1.563,
+            0.17
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.14959999999999998,
+                35.98626086956521
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.343,
+            0.0
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.7859999999999998,
+                0.0
+            ],
+            [
+                0.353,
+                1.343,
+                0.343
+            ],
+            [
+                0.816,
+                1.343,
+                0.0
+            ]
+        ],
+        "in_id": 16
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.45,
+        "width": 1.25,
+        "height": 0.39,
+        "volume": 0.219,
+        "weight": 30.426,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "OPCSA",
+        "dst_code": 13,
+        "frozen": 0,
+        "priority": 2,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 73,
+        "taxability": 30.426,
+        "orientation": 5,
+        "mass_center": [
+            0.9779999999999999,
+            1.341,
+            4.787
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.43649999999999933,
+                23.610576
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.146,
+            4.562
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                1.539,
+                4.562
+            ],
+            [
+                0.35299999999999987,
+                1.146,
+                5.015
+            ],
+            [
+                1.6059999999999997,
+                1.146,
+                4.562
+            ]
+        ],
+        "in_id": 17
+    },
+    {
+        "subgroup_id": 2,
+        "length": 0.33,
+        "width": 1.33,
+        "height": 1.17,
+        "volume": 0.514,
+        "weight": 41.223,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial del Esp\u00edritu Santo Oviedo",
+        "dst_code": 8,
+        "frozen": 0,
+        "priority": 6,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 89,
+        "taxability": 41.223,
+        "orientation": 6,
+        "mass_center": [
+            1.018,
+            0.585,
+            5.257
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.4389000000000001,
+                41.223
+            ]
+        ],
+        "pp_in": [
+            0.3529999999999999,
+            0.0,
+            5.092
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.1729999999999998,
+                5.092
+            ],
+            [
+                0.353,
+                0.0,
+                5.425
+            ],
+            [
+                1.686,
+                0.0,
+                5.092
+            ]
+        ],
+        "in_id": 18
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.89,
+        "width": 0.4,
+        "height": 1.24,
+        "volume": 0.441,
+        "weight": 48.373,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial de la Pedrosa",
+        "dst_code": 0,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 49,
+        "taxability": 48.373,
+        "orientation": 4,
+        "mass_center": [
+            0.996,
+            0.62,
+            0.938
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.356,
+                48.373
+            ]
+        ],
+        "pp_in": [
+            0.7959999999999999,
+            0.0,
+            0.493
+        ],
+        "pp_out": [
+            [
+                0.796,
+                1.2429999999999999,
+                0.49299999999999994
+            ],
+            [
+                0.796,
+                0.0,
+                1.386
+            ],
+            [
+                1.1989999999999998,
+                0.0,
+                0.49299999999999994
+            ]
+        ],
+        "in_id": 19
+    },
+    {
+        "subgroup_id": 2,
+        "length": 1.27,
+        "width": 1.52,
+        "height": 0.31,
+        "volume": 0.598,
+        "weight": 49.153,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Melilla",
+        "dst_code": 16,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 77,
+        "taxability": 49.153,
+        "orientation": 2,
+        "mass_center": [
+            1.113,
+            0.155,
+            6.06
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                1.9303999999999994,
+                49.153
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            5.425
+        ],
+        "pp_out": [
+            [
+                0.353,
+                0.313,
+                5.425
+            ],
+            [
+                0.353,
+                0.0,
+                6.6979999999999995
+            ],
+            [
+                1.876,
+                0.0,
+                5.425
+            ]
+        ],
+        "in_id": 20
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.57,
+        "width": 1.11,
+        "height": 1.48,
+        "volume": 0.936,
+        "weight": 17.115,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Melilla",
+        "dst_code": 16,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 58,
+        "taxability": 17.115,
+        "orientation": 4,
+        "mass_center": [
+            0.908,
+            1.053,
+            5.71
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.6327000000000004,
+                17.115
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.313,
+            5.425
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.7959999999999998,
+                5.425
+            ],
+            [
+                0.353,
+                0.31299999999999994,
+                5.998
+            ],
+            [
+                1.466,
+                0.31299999999999994,
+                5.425
+            ]
+        ],
+        "in_id": 21
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.4,
+        "width": 0.38,
+        "height": 1.08,
+        "volume": 0.575,
+        "weight": 46.739,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 97,
+        "taxability": 46.739,
+        "orientation": 6,
+        "mass_center": [
+            2.086,
+            0.54,
+            3.0359999999999996
+        ],
+        "subzones": [
+            [
+                1.0,
+                0.7600000000000001,
+                0.40432000000000007,
+                35.521640000000005
+            ],
+            [
+                2.0,
+                0.2399999999999999,
+                0.12767999999999996,
+                11.217359999999996
+            ]
+        ],
+        "pp_in": [
+            1.896,
+            0.0,
+            2.336
+        ],
+        "pp_out": [
+            [
+                1.896,
+                1.083,
+                2.3359999999999994
+            ],
+            [
+                1.896,
+                0.0,
+                3.739
+            ],
+            [
+                2.279,
+                0.0,
+                2.3359999999999994
+            ]
+        ],
+        "in_id": 22
+    },
+    {
+        "subgroup_id": 1,
+        "length": 1.24,
+        "width": 0.73,
+        "height": 0.64,
+        "volume": 0.579,
+        "weight": 33.095,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono Industrial Sur Expacio Merida",
+        "dst_code": 10,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 75,
+        "taxability": 33.095,
+        "orientation": 2,
+        "mass_center": [
+            1.7650000000000003,
+            1.9459999999999997,
+            1.8729999999999998
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.7008000000000001,
+                25.621935483870967
+            ]
+        ],
+        "pp_in": [
+            1.4000000000000004,
+            1.6259999999999997,
+            1.253
+        ],
+        "pp_out": [
+            [
+                1.4000000000000004,
+                2.2689999999999997,
+                1.2529999999999997
+            ],
+            [
+                1.4000000000000004,
+                1.6259999999999997,
+                2.496
+            ],
+            [
+                2.1330000000000005,
+                1.6259999999999997,
+                1.2529999999999997
+            ]
+        ],
+        "in_id": 23
+    },
+    {
+        "subgroup_id": 2,
+        "length": 0.36,
+        "width": 1.13,
+        "height": 1.23,
+        "volume": 0.5,
+        "weight": 25.174,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Centrolid",
+        "dst_code": 6,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 67,
+        "taxability": 25.174,
+        "orientation": 3,
+        "mass_center": [
+            0.9179999999999999,
+            0.9279999999999999,
+            6.178
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.40679999999999933,
+                25.174
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.31299999999999994,
+            5.998
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.5459999999999998,
+                5.998
+            ],
+            [
+                0.353,
+                0.31299999999999994,
+                6.361
+            ],
+            [
+                1.4859999999999998,
+                0.31299999999999994,
+                5.998
+            ]
+        ],
+        "in_id": 24
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.38,
+        "width": 1.0,
+        "height": 0.73,
+        "volume": 1.007,
+        "weight": 42.199,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Melilla",
+        "dst_code": 16,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 15,
+        "taxability": 42.199,
+        "orientation": 6,
+        "mass_center": [
+            0.853,
+            0.365,
+            7.388
+        ],
+        "subzones": [
+            [
+                2.0,
+                0.07391304347826111,
+                0.10200000000000026,
+                3.1190565217391404
+            ],
+            [
+                3.0,
+                0.9260869565217389,
+                1.2779999999999987,
+                39.07994347826086
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            6.6979999999999995
+        ],
+        "pp_out": [
+            [
+                0.353,
+                0.733,
+                6.698
+            ],
+            [
+                0.353,
+                0.0,
+                8.081
+            ],
+            [
+                1.3559999999999999,
+                0.0,
+                6.698
+            ]
+        ],
+        "in_id": 25
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.96,
+        "width": 1.14,
+        "height": 1.09,
+        "volume": 1.193,
+        "weight": 46.562,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 91,
+        "taxability": 46.562,
+        "orientation": 2,
+        "mass_center": [
+            0.9229999999999999,
+            0.545,
+            8.561
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                1.094400000000001,
+                46.562
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            8.081
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.093,
+                8.081
+            ],
+            [
+                0.353,
+                0.0,
+                9.044
+            ],
+            [
+                1.4959999999999998,
+                0.0,
+                8.081
+            ]
+        ],
+        "in_id": 26
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.72,
+        "width": 1.07,
+        "height": 0.79,
+        "volume": 0.609,
+        "weight": 22.523,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono Industrial La Negrilla",
+        "dst_code": 3,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 98,
+        "taxability": 22.523,
+        "orientation": 2,
+        "mass_center": [
+            0.888,
+            1.488,
+            8.440999999999999
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                0.7703999999999989,
+                22.523
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.093,
+            8.081
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.886,
+                8.081
+            ],
+            [
+                0.353,
+                1.093,
+                8.803999999999998
+            ],
+            [
+                1.426,
+                1.093,
+                8.081
+            ]
+        ],
+        "in_id": 27
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.98,
+        "width": 1.21,
+        "height": 1.58,
+        "volume": 1.874,
+        "weight": 43.871,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial T\u00e1ctica",
+        "dst_code": 1,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 28,
+        "taxability": 43.871,
+        "orientation": 1,
+        "mass_center": [
+            0.958,
+            0.79,
+            9.534
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                1.1858000000000004,
+                43.871
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            9.044
+        ],
+        "pp_out": [
+            [
+                0.353,
+                1.583,
+                9.044
+            ],
+            [
+                0.353,
+                0.0,
+                10.027000000000001
+            ],
+            [
+                1.5659999999999998,
+                0.0,
+                9.044
+            ]
+        ],
+        "in_id": 28
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.01,
+        "width": 1.56,
+        "height": 0.96,
+        "volume": 1.513,
+        "weight": 40.611,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono nueva monta\u00f1a",
+        "dst_code": 9,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 31,
+        "taxability": 40.611,
+        "orientation": 1,
+        "mass_center": [
+            1.133,
+            0.48,
+            10.532000000000002
+        ],
+        "subzones": [
+            [
+                3.0,
+                0.171287128712868,
+                0.26987999999999523,
+                6.956141584158281
+            ],
+            [
+                4.0,
+                0.828712871287132,
+                1.3057200000000073,
+                33.654858415841716
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            10.027000000000001
+        ],
+        "pp_out": [
+            [
+                0.353,
+                0.963,
+                10.027000000000001
+            ],
+            [
+                0.353,
+                0.0,
+                11.040000000000003
+            ],
+            [
+                1.916,
+                0.0,
+                10.027000000000001
+            ]
+        ],
+        "in_id": 29
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.39,
+        "width": 0.5,
+        "height": 1.57,
+        "volume": 0.306,
+        "weight": 27.607,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Edificio Iwer",
+        "dst_code": 11,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 23,
+        "taxability": 27.607,
+        "orientation": 1,
+        "mass_center": [
+            0.603,
+            1.448,
+            2.5309999999999997
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.19499999999999984,
+                27.607
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.663,
+            2.336
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.236,
+                2.336
+            ],
+            [
+                0.353,
+                0.6629999999999999,
+                2.7289999999999996
+            ],
+            [
+                0.856,
+                0.6629999999999999,
+                2.336
+            ]
+        ],
+        "in_id": 30
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.03,
+        "width": 1.37,
+        "height": 0.86,
+        "volume": 1.214,
+        "weight": 49.444,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Edificio Iwer",
+        "dst_code": 11,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 34,
+        "taxability": 49.444,
+        "orientation": 2,
+        "mass_center": [
+            1.038,
+            2.013,
+            9.559000000000001
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                1.1858000000000004,
+                41.549638721564705
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.583,
+            9.044
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.446,
+                9.044
+            ],
+            [
+                0.353,
+                1.583,
+                10.077000000000002
+            ],
+            [
+                1.726,
+                1.583,
+                9.044
+            ]
+        ],
+        "in_id": 31
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.1,
+        "width": 0.49,
+        "height": 0.91,
+        "volume": 0.49,
+        "weight": 37.42,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "OPCSA",
+        "dst_code": 13,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 57,
+        "taxability": 37.42,
+        "orientation": 3,
+        "mass_center": [
+            0.598,
+            1.798,
+            0.893
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.484,
+                33.60163265306122
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.343,
+            0.343
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.2560000000000002,
+                0.34299999999999997
+            ],
+            [
+                0.353,
+                1.343,
+                1.446
+            ],
+            [
+                0.846,
+                1.343,
+                0.34299999999999997
+            ]
+        ],
+        "in_id": 32
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.06,
+        "width": 0.44,
+        "height": 0.36,
+        "volume": 0.168,
+        "weight": 44.486,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "OPCSA",
+        "dst_code": 13,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 54,
+        "taxability": 44.486,
+        "orientation": 2,
+        "mass_center": [
+            2.116,
+            1.263,
+            2.8659999999999997
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.4027999999999998,
+                38.419727272727215
+            ]
+        ],
+        "pp_in": [
+            1.896,
+            1.083,
+            2.3359999999999994
+        ],
+        "pp_out": [
+            [
+                1.8960000000000001,
+                1.4459999999999997,
+                2.3359999999999994
+            ],
+            [
+                1.8960000000000001,
+                1.083,
+                3.399
+            ],
+            [
+                2.3390000000000004,
+                1.083,
+                2.3359999999999994
+            ]
+        ],
+        "in_id": 33
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.08,
+        "width": 0.76,
+        "height": 0.84,
+        "volume": 0.689,
+        "weight": 41.345,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Santa Mar\u00eda de Benquerencia (Pol\u00edgono)",
+        "dst_code": 4,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 55,
+        "taxability": 41.345,
+        "orientation": 6,
+        "mass_center": [
+            1.7359999999999998,
+            0.42,
+            7.238
+        ],
+        "subzones": [
+            [
+                2.0,
+                0.09444444444444389,
+                0.07751999999999953,
+                3.9048055555555323
+            ],
+            [
+                3.0,
+                0.905555555555556,
+                0.7432800000000003,
+                37.440194444444465
+            ]
+        ],
+        "pp_in": [
+            1.3559999999999999,
+            0.0,
+            6.698
+        ],
+        "pp_out": [
+            [
+                1.3559999999999999,
+                0.843,
+                6.698
+            ],
+            [
+                1.3559999999999999,
+                0.0,
+                7.781000000000001
+            ],
+            [
+                2.1189999999999998,
+                0.0,
+                6.698
+            ]
+        ],
+        "in_id": 34
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.73,
+        "width": 0.34,
+        "height": 1.21,
+        "volume": 0.3,
+        "weight": 36.192,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial de la Pedrosa",
+        "dst_code": 0,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 1,
+        "taxability": 36.192,
+        "orientation": 3,
+        "mass_center": [
+            0.17,
+            1.5879999999999999,
+            0.8280000000000001
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.19278,
+                28.110772602739726
+            ]
+        ],
+        "pp_in": [
+            0.0,
+            0.9829999999999999,
+            0.463
+        ],
+        "pp_out": [
+            [
+                0.0,
+                2.1959999999999997,
+                0.4630000000000001
+            ],
+            [
+                0.0,
+                0.9829999999999999,
+                1.196
+            ],
+            [
+                0.343,
+                0.9829999999999999,
+                0.4630000000000001
+            ]
+        ],
+        "in_id": 35
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.58,
+        "width": 0.74,
+        "height": 0.35,
+        "volume": 0.15,
+        "weight": 16.954,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Santa Mar\u00eda de Benquerencia (Pol\u00edgono)",
+        "dst_code": 4,
+        "frozen": 0,
+        "priority": 5,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 42,
+        "taxability": 16.954,
+        "orientation": 4,
+        "mass_center": [
+            0.7229999999999999,
+            2.0309999999999997,
+            1.773
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.42919999999999986,
+                16.953999999999997
+            ]
+        ],
+        "pp_in": [
+            0.3529999999999999,
+            1.8559999999999999,
+            1.4829999999999999
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                2.2089999999999996,
+                1.4829999999999999
+            ],
+            [
+                0.35299999999999987,
+                1.8559999999999997,
+                2.066
+            ],
+            [
+                1.0959999999999999,
+                1.8559999999999997,
+                1.4829999999999999
+            ]
+        ],
+        "in_id": 36
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.08,
+        "width": 1.53,
+        "height": 1.47,
+        "volume": 2.429,
+        "weight": 37.138,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Centrolid",
+        "dst_code": 6,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 19,
+        "taxability": 37.138,
+        "orientation": 4,
+        "mass_center": [
+            1.1179999999999999,
+            0.735,
+            11.580000000000002
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                1.6523999999999976,
+                37.138
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.0,
+            11.040000000000003
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                1.4729999999999999,
+                11.040000000000003
+            ],
+            [
+                0.35299999999999987,
+                0.0,
+                12.123000000000001
+            ],
+            [
+                1.886,
+                0.0,
+                11.040000000000003
+            ]
+        ],
+        "in_id": 37
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.37,
+        "width": 0.76,
+        "height": 0.73,
+        "volume": 0.205,
+        "weight": 43.992,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Ceuta",
+        "dst_code": 15,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 18,
+        "taxability": 43.992,
+        "orientation": 5,
+        "mass_center": [
+            0.7329999999999999,
+            1.904,
+            4.747
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.28119999999999945,
+                43.992
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.539,
+            4.562
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                2.2720000000000002,
+                4.562
+            ],
+            [
+                0.35299999999999987,
+                1.539,
+                4.935
+            ],
+            [
+                1.1159999999999999,
+                1.539,
+                4.562
+            ]
+        ],
+        "in_id": 38
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.23,
+        "width": 1.25,
+        "height": 0.38,
+        "volume": 0.584,
+        "weight": 39.501,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 17,
+        "taxability": 39.501,
+        "orientation": 6,
+        "mass_center": [
+            0.9779999999999999,
+            1.6629999999999998,
+            11.655000000000003
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                1.3499999999999979,
+                34.68380487804871
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.4729999999999999,
+            11.040000000000003
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                1.8559999999999997,
+                11.040000000000003
+            ],
+            [
+                0.35299999999999987,
+                1.4729999999999999,
+                12.273000000000003
+            ],
+            [
+                1.6059999999999997,
+                1.4729999999999999,
+                11.040000000000003
+            ]
+        ],
+        "in_id": 39
+    },
+    {
+        "subgroup_id": 1,
+        "length": 1.4,
+        "width": 1.54,
+        "height": 0.6,
+        "volume": 1.294,
+        "weight": 46.086,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial T\u00e1ctica",
+        "dst_code": 1,
+        "frozen": 0,
+        "priority": 1,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 10,
+        "taxability": 46.086,
+        "orientation": 4,
+        "mass_center": [
+            1.1229999999999998,
+            0.3,
+            12.823
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                2.155999999999998,
+                46.086
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            0.0,
+            12.123000000000001
+        ],
+        "pp_out": [
+            [
+                0.35299999999999976,
+                0.603,
+                12.123000000000001
+            ],
+            [
+                0.35299999999999976,
+                0.0,
+                13.526
+            ],
+            [
+                1.8959999999999997,
+                0.0,
+                12.123000000000001
+            ]
+        ],
+        "in_id": 40
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.91,
+        "width": 0.57,
+        "height": 0.3,
+        "volume": 0.156,
+        "weight": 22.748,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono do Tambre",
+        "dst_code": 7,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 30,
+        "taxability": 22.748,
+        "orientation": 3,
+        "mass_center": [
+            1.141,
+            0.813,
+            2.791
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.5186999999999999,
+                22.748
+            ]
+        ],
+        "pp_in": [
+            0.856,
+            0.6629999999999999,
+            2.336
+        ],
+        "pp_out": [
+            [
+                0.8560000000000001,
+                0.966,
+                2.336
+            ],
+            [
+                0.8560000000000001,
+                0.6629999999999999,
+                3.249
+            ],
+            [
+                1.4289999999999998,
+                0.6629999999999999,
+                2.336
+            ]
+        ],
+        "in_id": 41
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.79,
+        "width": 0.48,
+        "height": 0.51,
+        "volume": 0.193,
+        "weight": 25.431,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Ceuta",
+        "dst_code": 15,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 80,
+        "taxability": 25.431,
+        "orientation": 2,
+        "mass_center": [
+            0.593,
+            2.0509999999999997,
+            5.82
+        ],
+        "subzones": [
+            [
+                2.0,
+                1.0,
+                0.2735999999999997,
+                18.348949367088608
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.7959999999999998,
+            5.425
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.3089999999999997,
+                5.425000000000001
+            ],
+            [
+                0.353,
+                1.7959999999999998,
+                6.218
+            ],
+            [
+                0.836,
+                1.7959999999999998,
+                5.425000000000001
+            ]
+        ],
+        "in_id": 42
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.16,
+        "width": 0.33,
+        "height": 1.56,
+        "volume": 0.597,
+        "weight": 13.412,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono do Tambre",
+        "dst_code": 7,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 21,
+        "taxability": 13.412,
+        "orientation": 2,
+        "mass_center": [
+            0.518,
+            1.513,
+            7.2780000000000005
+        ],
+        "subzones": [
+            [
+                2.0,
+                0.08793103448275796,
+                0.38280000000000014,
+                13.412
+            ],
+            [
+                3.0,
+                0.912068965517242,
+                0.38280000000000014,
+                13.412
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            0.733,
+            6.698
+        ],
+        "pp_out": [
+            [
+                0.353,
+                2.2960000000000003,
+                6.698
+            ],
+            [
+                0.353,
+                0.7329999999999999,
+                7.861000000000001
+            ],
+            [
+                0.686,
+                0.7329999999999999,
+                6.698
+            ]
+        ],
+        "in_id": 43
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.22,
+        "width": 1.02,
+        "height": 0.58,
+        "volume": 0.722,
+        "weight": 12.32,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Centrolid",
+        "dst_code": 6,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 78,
+        "taxability": 12.32,
+        "orientation": 3,
+        "mass_center": [
+            0.8629999999999999,
+            2.1459999999999995,
+            11.650000000000002
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                1.2443999999999988,
+                12.32
+            ]
+        ],
+        "pp_in": [
+            0.35299999999999987,
+            1.8559999999999997,
+            11.040000000000003
+        ],
+        "pp_out": [
+            [
+                0.35299999999999987,
+                2.4389999999999996,
+                11.040000000000003
+            ],
+            [
+                0.35299999999999987,
+                1.8559999999999994,
+                12.263000000000002
+            ],
+            [
+                1.3759999999999997,
+                1.8559999999999994,
+                11.040000000000003
+            ]
+        ],
+        "in_id": 44
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.65,
+        "width": 1.51,
+        "height": 0.41,
+        "volume": 0.402,
+        "weight": 45.18,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Edificio Iwer",
+        "dst_code": 11,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 87,
+        "taxability": 45.18,
+        "orientation": 2,
+        "mass_center": [
+            1.108,
+            2.0909999999999997,
+            8.405999999999999
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                0.6954999999999983,
+                32.014966887417216
+            ]
+        ],
+        "pp_in": [
+            0.353,
+            1.886,
+            8.081
+        ],
+        "pp_out": [
+            [
+                0.3530000000000001,
+                2.299,
+                8.081
+            ],
+            [
+                0.3530000000000001,
+                1.8859999999999997,
+                8.733999999999998
+            ],
+            [
+                1.8659999999999999,
+                1.8859999999999997,
+                8.081
+            ]
+        ],
+        "in_id": 45
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.21,
+        "width": 0.32,
+        "height": 0.63,
+        "volume": 0.244,
+        "weight": 42.336,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "OPCSA",
+        "dst_code": 13,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 33,
+        "taxability": 42.336,
+        "orientation": 1,
+        "mass_center": [
+            0.16,
+            0.315,
+            1.638
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.3872,
+                42.336
+            ]
+        ],
+        "pp_in": [
+            0.0,
+            0.0,
+            1.033
+        ],
+        "pp_out": [
+            [
+                0.0,
+                0.633,
+                1.033
+            ],
+            [
+                0.0,
+                0.0,
+                2.246
+            ],
+            [
+                0.323,
+                0.0,
+                1.033
+            ]
+        ],
+        "in_id": 46
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.45,
+        "width": 0.46,
+        "height": 0.75,
+        "volume": 0.155,
+        "weight": 23.792,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Centrolid",
+        "dst_code": 6,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 62,
+        "taxability": 23.792,
+        "orientation": 6,
+        "mass_center": [
+            2.0430000000000006,
+            0.9079999999999999,
+            0.698
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.20699999999999996,
+                23.792
+            ]
+        ],
+        "pp_in": [
+            1.8130000000000004,
+            0.5329999999999999,
+            0.473
+        ],
+        "pp_out": [
+            [
+                1.8130000000000006,
+                1.2859999999999998,
+                0.473
+            ],
+            [
+                1.8130000000000006,
+                0.5329999999999999,
+                0.9259999999999999
+            ],
+            [
+                2.2760000000000007,
+                0.5329999999999999,
+                0.473
+            ]
+        ],
+        "in_id": 47
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.77,
+        "width": 0.93,
+        "height": 1.39,
+        "volume": 0.995,
+        "weight": 45.207,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono nueva monta\u00f1a",
+        "dst_code": 9,
+        "frozen": 0,
+        "priority": 3,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 90,
+        "taxability": 45.207,
+        "orientation": 3,
+        "mass_center": [
+            1.821,
+            1.5379999999999998,
+            7.083
+        ],
+        "subzones": [
+            [
+                2.0,
+                0.1324675324675323,
+                0.5851999999999995,
+                36.94335483870966
+            ],
+            [
+                3.0,
+                0.8675324675324677,
+                0.5851999999999995,
+                36.94335483870966
+            ]
+        ],
+        "pp_in": [
+            1.3559999999999999,
+            0.843,
+            6.698
+        ],
+        "pp_out": [
+            [
+                1.3559999999999999,
+                2.2359999999999998,
+                6.698
+            ],
+            [
+                1.3559999999999999,
+                0.8429999999999999,
+                7.471
+            ],
+            [
+                2.289,
+                0.8429999999999999,
+                6.698
+            ]
+        ],
+        "in_id": 48
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.85,
+        "width": 0.35,
+        "height": 1.18,
+        "volume": 0.351,
+        "weight": 44.136,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial del Esp\u00edritu Santo Oviedo",
+        "dst_code": 8,
+        "frozen": 0,
+        "priority": 2,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 65,
+        "taxability": 44.136,
+        "orientation": 6,
+        "mass_center": [
+            0.9710000000000001,
+            1.8329999999999997,
+            0.9179999999999999
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.2975000000000001,
+                44.136
+            ]
+        ],
+        "pp_in": [
+            0.796,
+            1.2429999999999999,
+            0.49299999999999994
+        ],
+        "pp_out": [
+            [
+                0.796,
+                2.4259999999999997,
+                0.49299999999999994
+            ],
+            [
+                0.796,
+                1.2429999999999999,
+                1.3459999999999999
+            ],
+            [
+                1.149,
+                1.2429999999999999,
+                0.49299999999999994
+            ]
+        ],
+        "in_id": 49
+    },
+    {
+        "subgroup_id": 0,
+        "length": 1.36,
+        "width": 0.52,
+        "height": 0.6,
+        "volume": 0.424,
+        "weight": 27.56,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 2,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 43,
+        "taxability": 27.56,
+        "orientation": 5,
+        "mass_center": [
+            0.9460000000000001,
+            1.033,
+            7.378
+        ],
+        "subzones": [
+            [
+                2.0,
+                0.07500000000000007,
+                0.7071999999999996,
+                27.56
+            ],
+            [
+                3.0,
+                0.9249999999999999,
+                0.7071999999999996,
+                27.56
+            ]
+        ],
+        "pp_in": [
+            0.686,
+            0.7329999999999999,
+            6.698
+        ],
+        "pp_out": [
+            [
+                0.686,
+                1.3359999999999999,
+                6.698
+            ],
+            [
+                0.686,
+                0.7329999999999999,
+                8.061
+            ],
+            [
+                1.2089999999999999,
+                0.7329999999999999,
+                6.698
+            ]
+        ],
+        "in_id": 50
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.7,
+        "width": 0.59,
+        "height": 1.35,
+        "volume": 0.558,
+        "weight": 45.514,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Santa Mar\u00eda de Benquerencia (Pol\u00edgono)",
+        "dst_code": 4,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 1,
+        "ADR": 0,
+        "id": 38,
+        "taxability": 45.514,
+        "orientation": 5,
+        "mass_center": [
+            1.7909999999999997,
+            0.675,
+            8.431
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                0.41299999999999965,
+                45.514
+            ]
+        ],
+        "pp_in": [
+            1.4959999999999998,
+            0.0,
+            8.081
+        ],
+        "pp_out": [
+            [
+                1.4959999999999998,
+                1.353,
+                8.081
+            ],
+            [
+                1.4959999999999998,
+                0.0,
+                8.783999999999999
+            ],
+            [
+                2.089,
+                0.0,
+                8.081
+            ]
+        ],
+        "in_id": 51
+    },
+    {
+        "subgroup_id": 1,
+        "length": 0.66,
+        "width": 0.68,
+        "height": 1.45,
+        "volume": 0.651,
+        "weight": 38.779,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono nueva monta\u00f1a",
+        "dst_code": 9,
+        "frozen": 0,
+        "priority": 10,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 92,
+        "taxability": 38.779,
+        "orientation": 6,
+        "mass_center": [
+            1.1960000000000002,
+            1.6909999999999998,
+            2.666
+        ],
+        "subzones": [
+            [
+                1.0,
+                1.0,
+                0.3762,
+                32.50592647058822
+            ]
+        ],
+        "pp_in": [
+            0.8560000000000001,
+            0.966,
+            2.336
+        ],
+        "pp_out": [
+            [
+                0.8560000000000001,
+                2.419,
+                2.336
+            ],
+            [
+                0.8560000000000001,
+                0.9659999999999999,
+                2.999
+            ],
+            [
+                1.5390000000000001,
+                0.9659999999999999,
+                2.336
+            ]
+        ],
+        "in_id": 52
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.77,
+        "width": 0.48,
+        "height": 0.93,
+        "volume": 0.344,
+        "weight": 30.487,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Pol\u00edgono Industrial Camposol",
+        "dst_code": 2,
+        "frozen": 0,
+        "priority": 8,
+        "breakability": 0,
+        "ADR": 1,
+        "id": 76,
+        "taxability": 30.487,
+        "orientation": 3,
+        "mass_center": [
+            2.1359999999999997,
+            0.465,
+            12.508000000000001
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                0.3695999999999996,
+                30.487
+            ]
+        ],
+        "pp_in": [
+            1.8959999999999997,
+            0.0,
+            12.123000000000001
+        ],
+        "pp_out": [
+            [
+                1.8959999999999997,
+                0.933,
+                12.123000000000001
+            ],
+            [
+                1.8959999999999997,
+                0.0,
+                12.896
+            ],
+            [
+                2.3789999999999996,
+                0.0,
+                12.123000000000001
+            ]
+        ],
+        "in_id": 53
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.38,
+        "width": 0.61,
+        "height": 1.44,
+        "volume": 0.334,
+        "weight": 19.229,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Bale\u00e0ria Palma",
+        "dst_code": 14,
+        "frozen": 0,
+        "priority": 7,
+        "breakability": 0,
+        "ADR": 0,
+        "id": 16,
+        "taxability": 19.229,
+        "orientation": 5,
+        "mass_center": [
+            1.6609999999999998,
+            1.5629999999999997,
+            7.6610000000000005
+        ],
+        "subzones": [
+            [
+                3.0,
+                1.0,
+                0.1872700000000002,
+                15.535007894736827
+            ]
+        ],
+        "pp_in": [
+            1.3559999999999999,
+            0.8429999999999999,
+            7.471
+        ],
+        "pp_out": [
+            [
+                1.3559999999999999,
+                2.2859999999999996,
+                7.471
+            ],
+            [
+                1.3559999999999999,
+                0.8429999999999997,
+                7.854000000000001
+            ],
+            [
+                1.9689999999999996,
+                0.8429999999999997,
+                7.471
+            ]
+        ],
+        "in_id": 54
+    },
+    {
+        "subgroup_id": 0,
+        "length": 0.66,
+        "width": 0.38,
+        "height": 0.54,
+        "volume": 0.135,
+        "weight": 45.425,
+        "src": "Parque Empresarial San Fernando de Henares",
+        "src_code": 5,
+        "dst": "Poligono Industrial El Burgo De Ebro",
+        "dst_code": 12,
+        "frozen": 0,
+        "priority": 4,
+        "breakability": 0,
+        "ADR": 1,
+        "id": 68,
+        "taxability": 45.425,
+        "orientation": 2,
+        "mass_center": [
+            2.086,
+            0.27,
+            13.226
+        ],
+        "subzones": [
+            [
+                4.0,
+                1.0,
+                0.25079999999999997,
+                45.425
+            ]
+        ],
+        "pp_in": [
+            1.8959999999999997,
+            0.0,
+            12.896
+        ],
+        "pp_out": [
+            [
+                1.896,
+                0.543,
+                12.896
+            ],
+            [
+                1.896,
+                0.0,
+                13.559000000000001
+            ],
+            [
+                2.279,
+                0.0,
+                12.896
+            ]
+        ],
+        "in_id": 55
+    }
+]

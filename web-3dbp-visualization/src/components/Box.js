@@ -18,7 +18,6 @@ export default function Box(props) {
             },
             onHover: ({ hovering }) => set({ scale: hovering ? [1.2, 1.2, 1.2] : [1, 1, 1] }),
         }) */
-
     return (
         <mesh {...props} position={props.position} >
             <boxGeometry args={props.dimensions} />

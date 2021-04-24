@@ -4,6 +4,7 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import Container from './components/Container';
 import Axis from './components/Axis';
+import placed from './placedpackets.json';
 import * as THREE from 'three';
 
 function App() {
@@ -11,6 +12,12 @@ function App() {
   const truckHeight = 2.45;
   const truckWidth = 2.45;
   const truckLength = 13.6;
+  const placedItems = placed
+  console.log(placedItems)
+  function generateRandomColor() {
+    var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
+  }
 
   return (
     <Canvas style={{ height: '100vh', background: 'gray' }} color="black">
@@ -23,7 +30,12 @@ function App() {
       <pointLight position={[10, 10, 10]} intensity={1} />
       <Axis dimensions={[truckWidth, truckHeight, truckLength]} />
       <Container dimensions={[truckWidth, truckHeight, truckLength]} />
-      <Box position={[1.25, 1.25, 1.25]} dimensions={[0.5, 0.5, 0.5]} color="#ff0000" idp={2} weight={20} />
+      {placedItems.map((item, i) => {
+        return (<Box position={item.mass_center}
+          dimensions={[item.width, item.height, item.length]}
+          color={generateRandomColor()}
+          idp={item.in_id} weight={item.weight} />)
+      })}
       <OrbitControls screenSpacePanning />
     </Canvas>
   );
