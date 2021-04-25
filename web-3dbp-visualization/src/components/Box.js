@@ -1,31 +1,39 @@
-import React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Html } from '@react-three/drei';
+import * as THREE from 'three';
 
 
 export default function Box(props) {
-    //const { size, viewport } = useThree()
-    //const aspect = size.width / viewport.width
+    // This reference will give us direct access to the mesh
+    const mesh = useRef()
+    // Set up state for the hovered and active state
+    const [hovered, setHover] = useState(false)
+    const [active, setActive] = useState(false)
 
-    /*     const [spring, set] = useSpring(() => ({
-            scale: [1, 1, 1],
-            position: [0, 0, 0],
-            rotation: [0, 0, 0],
-            config: { mass: 5, friction: 40, tension: 800 },
-        }))
-        const bind = useGesture({
-            onDrag: ({ offset: [x, y] }) => {
-                set({ position: [x / aspect, -y / aspect, 0], rotation: [y / aspect, x / aspect, 0] })
-            },
-            onHover: ({ hovering }) => set({ scale: hovering ? [1.2, 1.2, 1.2] : [1, 1, 1] }),
-        }) */
+    // Box configuration
+    var [width, height, length] = props.dimensions
+    const boxGeometry = new THREE.BoxGeometry(width, height, length);
+    // May want to change this to basic material due to a minor performance improvement.
+    const boxMaterial = new THREE.MeshLambertMaterial({ color: props.color });
+    const edges = new THREE.EdgesGeometry(boxGeometry);
+
+    // Aux function
+    useEffect(function returnID() {
+        if (active) { props.handleID(active, props.idp) }
+    });
+
     return (
-        <mesh {...props} position={props.position} >
+        <mesh {...props}
+            ref={mesh}
+            position={props.position}
+            material={boxMaterial}
+            onClick={(e) => { e.stopPropagation(); setActive(!active) }}>
             <boxGeometry args={props.dimensions} />
-            <Html center distanceFactor={2}>
-                <p>id : {props.idp} </p>
+            <line geometry={edges} material={new THREE.LineBasicMaterial({ color: 0x000000 })} />
+            <Html center={true} distanceFactor={2}>
+                <p> id : {props.idp} </p>
                 <p> Weight : {props.weight}</p>
             </Html>
-            <meshBasicMaterial color={props.color} />
         </mesh>
     )
 }

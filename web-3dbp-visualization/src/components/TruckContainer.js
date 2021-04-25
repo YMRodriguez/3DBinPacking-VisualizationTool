@@ -2,7 +2,7 @@ import React from 'react';
 import * as THREE from 'three';
 
 
-export default function Container(props) {
+export default function TruckContainer(props) {
     // Mapping dimensions of the truck
     var [truckWidth, truckHeight, truckLength] = props.dimensions;
 

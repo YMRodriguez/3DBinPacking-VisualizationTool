@@ -12,6 +12,6 @@ code {
     monospace;
 }
 
-.App {
-  height: 100vh;
+#root {
+  width: 100%;
 }
