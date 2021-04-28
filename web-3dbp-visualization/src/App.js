@@ -4,7 +4,7 @@ import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
 import placed from './placedpackets.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -25,13 +25,45 @@ function App() {
     length: 13.6
   })
 
-  const placedItems = placed
+  const [placedItems, setPlacedItems] = useState({
+    items: placed
+  })
 
-  // Random color generator
-  function generateRandomColor() {
-    var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    return randomColor;
-  }
+  const [itemsColors, setColors] = useState({
+    colors: []
+  })
+
+  const [cameraPostion, setCameraPostion] = useState({
+    position: [10, 8, 18]
+  })
+
+  // Only if placedItems change while re-rendering update colors.
+  useEffect(() => {
+    // Random color generator, one for each destination.
+    function generateDstColorPalette(items) {
+      var colors = []
+      // Get the amount of dst codes.
+      var length = Math.max(...items.map((item, i) => {
+        return item.dst_code
+      })) + 1
+      for (let i = 0; i < length; i++) {
+        var color = generateRandomColor()
+        while (colors.includes(color)) {
+          color = generateRandomColor();
+        }
+        colors.push(color)
+      }
+      return colors
+    }
+
+    function generateRandomColor() {
+      return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
+    }
+    setColors({ colors: generateDstColorPalette(placedItems.items) })
+  }, [placedItems])
+
+
+
   // Panel selection( future implementation)
   function handleIDSelection(active, i) {
     console.log(activeBox)
@@ -40,7 +72,7 @@ function App() {
 
   return (
     <Container fluid >
-      <Row md={10} style={{ height: '70vh' }}>
+      <Row md={10} style={{ height: '100vh' }}>
         <Canvas style={{
           background: 'gray'
         }}>
@@ -54,14 +86,14 @@ function App() {
           <ambientLight position={[10, 10, 10]} intensity={0.5} />
           <Axis dimensions={[truck.width, truck.height, truck.length]} />
           <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
-          {placedItems.map((item, i) => {
+          {placedItems.items.map((item, i) => {
             return (
               <Box
                 key={i}
                 position={item.mass_center}
                 handleID={(active, id) => { }}
                 dimensions={[item.width, item.height, item.length]}
-                color={generateRandomColor()}
+                color={itemsColors.colors[item.dst_code]}
                 idp={item.in_id} weight={item.weight} />)
           })}
           <OrbitControls screenSpacePanning maxDistance={30} />
@@ -75,7 +107,7 @@ function App() {
           <button>Hola</button>
         </Col>
       </Row>
-    </Container>
+    </Container >
   );
 }
 

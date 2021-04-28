@@ -18,9 +18,9 @@ export default function Box(props) {
     const edges = new THREE.EdgesGeometry(boxGeometry);
 
     // Aux function
-    useEffect(function returnID() {
-        if (active) { props.handleID(active, props.idp) }
-    });
+    //useEffect(function returnID() {
+    //    if (active) { props.handleID(active, props.idp) }
+    //});
 
     return (
         <mesh {...props}
@@ -33,6 +33,7 @@ export default function Box(props) {
             <Html center={true} distanceFactor={2}>
                 <p> id : {props.idp} </p>
                 <p> Weight : {props.weight}</p>
+                <p> Priority : {props.priority}</p>
             </Html>
         </mesh>
     )
