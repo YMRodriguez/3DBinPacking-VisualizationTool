@@ -90,11 +90,9 @@ function App() {
             return (
               <Box
                 key={i}
-                position={item.mass_center}
+                item={item}
                 handleID={(active, id) => { }}
-                dimensions={[item.width, item.height, item.length]}
-                color={itemsColors.colors[item.dst_code]}
-                idp={item.in_id} weight={item.weight} />)
+                color={itemsColors.colors[item.dst_code]} />)
           })}
           <OrbitControls screenSpacePanning maxDistance={30} />
         </Canvas>
