@@ -3,7 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import placed from './placedpackets.json';
+import solsFiltered1 from './3bestSolsFiltered.json';
+import FloatingPanel from './components/FloatingPanel';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,10 +13,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 
 function App() {
-  // State for Floating Box Panel.
-  const [activeBox, setActiveBox] = useState({
-    active: false,
-    id: null
+  const [selectedItem, setSelectedItem] = useState({
+    item: [],
+    color: "",
+    id: ""
   })
 
   // State for the truck
@@ -26,11 +27,21 @@ function App() {
   })
 
   const [placedItems, setPlacedItems] = useState({
-    items: placed
+    bestFilteredVolume: solsFiltered1.volume[1].placed,
+    //bestFilteredPrio: solsFiltered1.priority[0].placed,
+    //bestFilteredWeight: solsFiltered1.weight[0].placed,
+    //bestFilteredTax: solsFiltered1.taxability[0].placed,
+    //bestUnfilteredVolume: solsUnFiltered7.volume[0].placed,
+    //bestFilteredPrio: solsFiltered7.priority[0].placed,
+    //bestUnfilteredWeight: solsUnFiltered1.weight[0].placed,
+    //bestUnfilteredTax: solsUnFiltered1.taxability[0].placed
   })
 
   const [itemsColors, setColors] = useState({
-    colors: []
+    colors: ['#CC66FF',
+      '#660000', '#663333', '#666600',
+      '#6699FF', '#99FF33', '#CCFFFF',
+      '#FFFF66', '#CC3366', '#CC9999']
   })
 
   const [cameraPostion, setCameraPostion] = useState({
@@ -55,55 +66,57 @@ function App() {
       }
       return colors
     }
-
     function generateRandomColor() {
       return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
     }
-    setColors({ colors: generateDstColorPalette(placedItems.items) })
+    setColors({ colors: generateDstColorPalette(placedItems.bestFilteredVolume) })
   }, [placedItems])
 
+  // To update render of the second canvas after a box has been selected.
+  useEffect(() => {
 
+  }, [selectedItem])
 
   // Panel selection( future implementation)
-  function handleIDSelection(active, i) {
-    console.log(activeBox)
-    setActiveBox({ active: active, id: i })
+  function handleBoxSelection(item, i, color) {
+    setSelectedItem({ item: item, color: color, id: i })
   }
 
   return (
-    <Container fluid >
-      <Row md={10} style={{ height: '100vh' }}>
-        <Canvas style={{
-          background: 'gray'
-        }}>
-          <PerspectiveCamera
-            makeDefault
-            position={[10, 8, 18]}
-          >
-          </PerspectiveCamera>
-          <Stats />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          <ambientLight position={[10, 10, 10]} intensity={0.5} />
-          <Axis dimensions={[truck.width, truck.height, truck.length]} />
-          <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
-          {placedItems.items.map((item, i) => {
-            return (
-              <Box
-                key={i}
-                item={item}
-                handleID={(active, id) => { }}
-                color={itemsColors.colors[item.dst_code]} />)
-          })}
-          <OrbitControls screenSpacePanning maxDistance={30} />
-        </Canvas>
+    <Container fluid>
+      <Row noGutters style={{ height: '70vh' }}>
+        <Col sm={10}>
+          <Canvas style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(153,153,153,1) 100%)',
+            borderRadius: 8,
+          }}>
+            <PerspectiveCamera
+              makeDefault
+              position={[6, 4, 17]}
+            >
+            </PerspectiveCamera>
+            <Stats />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            <ambientLight position={[10, 10, 10]} intensity={0.5} />
+            <Axis dimensions={[truck.width, truck.height, truck.length]} />
+            <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
+            {placedItems.bestFilteredVolume.map((item, i) => {
+              return (
+                <Box
+                  key={i}
+                  item={item}
+                  handleID={(item) => { console.log(item); handleBoxSelection(item, i, itemsColors.colors[item.dst_code]) }}
+                  color={itemsColors.colors[item.dst_code]} />)
+            })}
+            <OrbitControls screenSpacePanning maxDistance={20} />
+          </Canvas>
+        </Col>
+        <Col sm={2}>
+          {console.log(selectedItem)}
+          <FloatingPanel selectedItem={selectedItem} />
+        </Col>
       </Row>
-      <Row >
-        <Col>
-          <button>Full Instant View</button>
-        </Col>
-        <Col>
-          <button>Hola</button>
-        </Col>
+      <Row noGutters style={{ height: '30vh' }}>
       </Row>
     </Container >
   );

@@ -17,22 +17,21 @@ export default function Box(props) {
     const boxMaterial = new THREE.MeshLambertMaterial({ color: props.color });
     const edges = new THREE.EdgesGeometry(boxGeometry);
 
-    // Aux function
-    //useEffect(function returnID() {
-    //    if (active) { props.handleID(active, props.idp) }
-    //});
+
 
     return (
         <mesh {...props}
             ref={mesh}
             position={props.item.mass_center}
             material={boxMaterial}
-            onClick={(e) => { e.stopPropagation(); setActive(!active) }}>
+            onClick={(e) => { e.stopPropagation(); props.handleID(props.item) }}>
             <boxGeometry args={[width, height, length]} />
             <line geometry={edges} material={new THREE.LineBasicMaterial({ color: 0x000000 })} />
             <Html center={true} distanceFactor={2}>
                 <p> id : {props.item.in_id} </p>
-                <p> Priority : {props.item.priority}</p>
+                <p> p : {props.item.priority} </p>
+                <p> weight : {props.item.weight} </p>
+                <p> d : {props.item.dst_code}</p>
             </Html>
         </mesh>
     )
