@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import { Html } from '@react-three/drei';
+import { useState, useRef } from 'react';
 import * as THREE from 'three';
 
 
@@ -14,9 +13,8 @@ export default function Box(props) {
     var [width, height, length] = [props.item.width, props.item.height, props.item.length]
     const boxGeometry = new THREE.BoxGeometry(width, height, length);
     // May want to change this to basic material due to a minor performance improvement.
-    const boxMaterial = new THREE.MeshLambertMaterial({ color: props.color });
+    const boxMaterial = new THREE.MeshLambertMaterial({ color: hovered ? 'black' : props.color });
     const edges = new THREE.EdgesGeometry(boxGeometry);
-
 
 
     return (
@@ -24,15 +22,14 @@ export default function Box(props) {
             ref={mesh}
             position={props.item.mass_center}
             material={boxMaterial}
+            onPointerOver={(e) => { e.stopPropagation(); e.target.setPointerCapture(e.pointerId); setHover(true) }}
+            onPointerOut={(e) => { // Would not make sense to leave stopPropagation cause it keeps othe elements hanging. 
+                e.target.releasePointerCapture(e.pointerId);
+                setHover(false)
+            }}
             onClick={(e) => { e.stopPropagation(); props.handleID(props.item) }}>
             <boxGeometry args={[width, height, length]} />
             <line geometry={edges} material={new THREE.LineBasicMaterial({ color: 0x000000 })} />
-            <Html center={true} distanceFactor={2}>
-                <p> id : {props.item.in_id} </p>
-                <p> p : {props.item.priority} </p>
-                <p> weight : {props.item.weight} </p>
-                <p> d : {props.item.dst_code}</p>
-            </Html>
         </mesh>
     )
 }

@@ -1,4 +1,4 @@
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 
 function App() {
+
   const [selectedItem, setSelectedItem] = useState({
     item: [],
     color: "",
@@ -48,33 +49,8 @@ function App() {
     position: [10, 8, 18]
   })
 
-  // Only if placedItems change while re-rendering update colors.
-  useEffect(() => {
-    // Random color generator, one for each destination.
-    function generateDstColorPalette(items) {
-      var colors = []
-      // Get the amount of dst codes.
-      var length = Math.max(...items.map((item, i) => {
-        return item.dst_code
-      })) + 1
-      for (let i = 0; i < length; i++) {
-        var color = generateRandomColor()
-        while (colors.includes(color)) {
-          color = generateRandomColor();
-        }
-        colors.push(color)
-      }
-      return colors
-    }
-    function generateRandomColor() {
-      return '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
-    }
-    setColors({ colors: generateDstColorPalette(placedItems.bestFilteredVolume) })
-  }, [placedItems])
-
   // To update render of the second canvas after a box has been selected.
   useEffect(() => {
-
   }, [selectedItem])
 
   // Panel selection( future implementation)
@@ -86,14 +62,13 @@ function App() {
     <Container fluid>
       <Row noGutters style={{ height: '70vh' }}>
         <Col sm={10}>
-          <Canvas style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(153,153,153,1) 100%)',
-            borderRadius: 8,
-          }}>
-            <PerspectiveCamera
-              makeDefault
-              position={[6, 4, 17]}
-            >
+          <Canvas
+            raycaster={{ linePrecision: 0.05 }}
+            style={{
+              background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 55%, rgba(153,153,153,1) 110%)',
+              borderRadius: 8,
+            }}>
+            <PerspectiveCamera makeDefault position={[6, 4, 17]}>
             </PerspectiveCamera>
             <Stats />
             <pointLight position={[10, 10, 10]} intensity={1} />
@@ -111,9 +86,8 @@ function App() {
             <OrbitControls screenSpacePanning maxDistance={20} />
           </Canvas>
         </Col>
-        <Col sm={2}>
-          {console.log(selectedItem)}
-          <FloatingPanel selectedItem={selectedItem} />
+        <Col sm={2} >
+          <FloatingPanel selectedItem={selectedItem} color={selectedItem.color} />
         </Col>
       </Row>
       <Row noGutters style={{ height: '30vh' }}>
