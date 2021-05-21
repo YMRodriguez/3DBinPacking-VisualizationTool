@@ -5,6 +5,7 @@ import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
 import solsFiltered1 from './3bestSolsFiltered.json';
 import FloatingPanel from './components/FloatingPanel';
+import StatisticsPanel from './components/StatisticsPanel';
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -61,14 +62,14 @@ function App() {
   return (
     <Container fluid>
       <Row noGutters style={{ height: '70vh' }}>
-        <Col sm={10}>
+        <Col sm={10} style={{ border: '2px solid black', borderRadius: 8 }}>
           <Canvas
             raycaster={{ linePrecision: 0.05 }}
             style={{
               background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 55%, rgba(153,153,153,1) 110%)',
               borderRadius: 8,
             }}>
-            <PerspectiveCamera makeDefault position={[6, 4, 17]}>
+            <PerspectiveCamera makeDefault position={[10, 3, 15]}>
             </PerspectiveCamera>
             <Stats />
             <pointLight position={[10, 10, 10]} intensity={1} />
@@ -91,6 +92,13 @@ function App() {
         </Col>
       </Row>
       <Row noGutters style={{ height: '30vh' }}>
+        <Col sm={8} style={{ border: '2px solid black', borderRadius: 8 }}>
+          <StatisticsPanel />
+        </Col>
+        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+        </Col>
+        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+        </Col>
       </Row>
     </Container >
   );
