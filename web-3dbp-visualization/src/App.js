@@ -11,9 +11,8 @@ import { useEffect, useState, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import * as THREE from 'three';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -55,31 +54,32 @@ function App() {
     type: 0,
     position: [8, 3, 10],
     fov: 50,
-    offsetX: "",
-    offsetY: "",
-    offsetZ: ""
+    lookAtX: "",
+    lookAtY: "",
+    lookAtZ: "",
   })
-
-  useEffect(() => {
-  }, [cameraState.type])
 
   // To update render of the second canvas after a box has been selected.
   useEffect(() => {
   }, [selectedItem])
 
+  function CustomCamera(props) {
+    const ref = useRef()
+    const set = useThree(state => state.set)
+    const size = useThree(({ size }) => size)
+    useEffect(() => {
+      ref.current.aspect = size.width / size.height
+      ref.current.lookAt(cameraState.lookAtX, cameraState.lookAtY, cameraState.lookAtZ)
+      ref.current.updateProjectionMatrix()
+      ref.current.updateMatrixWorld()
+      void set({ camera: ref.current })
+    }, [])
+    return <perspectiveCamera ref={ref} {...props} />
+  }
+
   // Panel selection( future implementation)
   const handleBoxSelection = (item, i, color) => {
     setSelectedItem({ item: item, color: color, id: i })
-  }
-
-  function AlternativeCamera(props) {
-    const ref = useRef()
-    const size = useThree(({ size }) => size)
-    useEffect(() => {
-      ref.current.rotateX(Math.PI / 2)
-      ref.current.updateMatrixWorld()
-    }, [])
-    return <perspectiveCamera ref={ref} aspect={size.width / size.height} {...props} />
   }
 
   return (
@@ -92,9 +92,10 @@ function App() {
               background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 55%, rgba(153,153,153,1) 110%)',
               borderRadius: 8,
             }}>
-            {cameraState.type !== 0 ? <AlternativeCamera position={cameraState.position}
+            {cameraState.type !== 0 ? <CustomCamera position={cameraState.position}
               fov={cameraState.fov} /> :
               <PerspectiveCamera makeDefault position={cameraState.position}>
+                <OrbitControls maxDistance={20} />
               </PerspectiveCamera>}
             <Stats />
             <ambientLight position={[10, 10, 10]} intensity={1.2} />
@@ -108,7 +109,6 @@ function App() {
                   handleID={(item) => { handleBoxSelection(item, i, itemsColors.colors[item.dst_code]) }}
                   color={itemsColors.colors[item.dst_code]} />)
             })}
-            <OrbitControls maxDistance={20} />
           </Canvas>
         </Col>
         <Col sm={2} >
@@ -120,20 +120,26 @@ function App() {
           <StatisticsPanel />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
-          <CamControllerPanel changeCamera={
-            (newType, newPosition, newFov, newOffsetX, newOffsetY, newOffsetZ) => {
-              setCameraState({
-                type: newType,
-                position: newPosition,
-                fov: newFov,
-                offsetX: newOffsetX,
-                offsetY: newOffsetY,
-                offsetZ: newOffsetZ
-              })
-            }
-          } />
+
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+          <CamControllerPanel changeCamera={(Type,
+            Position,
+            Fov,
+            lookAtX,
+            lookAtY,
+            lookAtZ) =>
+            setCameraState({
+              ...cameraState,
+              type: Type,
+              position: Position,
+              fov: Fov,
+              lookAtX: lookAtX,
+              lookAtY: lookAtY,
+              lookAtZ: lookAtZ
+            })
+          }
+          />
         </Col>
       </Row>
     </Container >
