@@ -38,7 +38,6 @@ export default function FloatingPanel(props) {
                 d.push({ key: d.length + 1, attribute: key, value: value })
             }
         }
-        console.log(d)
         setItemData({ data: d })
     }, [props.selectedItem])
     return (
@@ -51,13 +50,12 @@ export default function FloatingPanel(props) {
                     }}>
                     <PerspectiveCamera makeDefault position={[0, 0, 1.3]}></PerspectiveCamera>
                     <ambientLight intensity={0.75} />
-                    {console.log(props.selectedItem)}
                     <ProjectedBox
                         item={props.selectedItem.item}
                         color={props.color} />
                 </Canvas>
             </Row>
-            <Row style={{ height: '45vh' }}>
+            <Row style={{ height: '45vh', border: '2px solid black', borderRadius: 8 }}>
                 <Table
                     {...tableProps}
                     columns={columns}

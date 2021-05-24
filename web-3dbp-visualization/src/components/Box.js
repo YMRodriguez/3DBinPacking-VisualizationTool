@@ -24,8 +24,8 @@ export default function Box(props) {
             material={boxMaterial}
             onPointerOver={(e) => { e.stopPropagation(); e.target.setPointerCapture(e.pointerId); setHover(true) }}
             onPointerOut={(e) => { // Would not make sense to leave stopPropagation cause it keeps othe elements hanging. 
-                e.target.releasePointerCapture(e.pointerId);
                 setHover(false)
+                e.target.releasePointerCapture(e.pointerId);
             }}
             onClick={(e) => { e.stopPropagation(); props.handleID(props.item) }}>
             <boxGeometry args={[width, height, length]} />

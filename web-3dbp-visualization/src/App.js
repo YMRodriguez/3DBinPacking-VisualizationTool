@@ -5,13 +5,16 @@ import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
 import solsFiltered1 from './3bestSolsFiltered.json';
 import FloatingPanel from './components/FloatingPanel';
+import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css"
+import "./App.css";
+import * as THREE from 'three';
+
 
 function App() {
 
@@ -46,17 +49,37 @@ function App() {
       '#FFFF66', '#CC3366', '#CC9999']
   })
 
-  const [cameraPostion, setCameraPostion] = useState({
-    position: [10, 8, 18]
+  // Change camera.
+  // 0 is the default. 1 is right side. 2 is left side. 3 is rear. 4 is top. 5 is bottom.
+  const [cameraState, setCameraState] = useState({
+    type: 0,
+    position: [8, 3, 10],
+    fov: 50,
+    offsetX: "",
+    offsetY: "",
+    offsetZ: ""
   })
+
+  useEffect(() => {
+  }, [cameraState.type])
 
   // To update render of the second canvas after a box has been selected.
   useEffect(() => {
   }, [selectedItem])
 
   // Panel selection( future implementation)
-  function handleBoxSelection(item, i, color) {
+  const handleBoxSelection = (item, i, color) => {
     setSelectedItem({ item: item, color: color, id: i })
+  }
+
+  function AlternativeCamera(props) {
+    const ref = useRef()
+    const size = useThree(({ size }) => size)
+    useEffect(() => {
+      ref.current.rotateX(Math.PI / 2)
+      ref.current.updateMatrixWorld()
+    }, [])
+    return <perspectiveCamera ref={ref} aspect={size.width / size.height} {...props} />
   }
 
   return (
@@ -64,16 +87,17 @@ function App() {
       <Row noGutters style={{ height: '70vh' }}>
         <Col sm={10} style={{ border: '2px solid black', borderRadius: 8 }}>
           <Canvas
-            raycaster={{ linePrecision: 0.05 }}
+            raycaster={{ linePrecision: 0.01 }}
             style={{
               background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 55%, rgba(153,153,153,1) 110%)',
               borderRadius: 8,
             }}>
-            <PerspectiveCamera makeDefault position={[10, 3, 15]}>
-            </PerspectiveCamera>
+            {cameraState.type !== 0 ? <AlternativeCamera position={cameraState.position}
+              fov={cameraState.fov} /> :
+              <PerspectiveCamera makeDefault position={cameraState.position}>
+              </PerspectiveCamera>}
             <Stats />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <ambientLight position={[10, 10, 10]} intensity={0.5} />
+            <ambientLight position={[10, 10, 10]} intensity={1.2} />
             <Axis dimensions={[truck.width, truck.height, truck.length]} />
             <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
             {placedItems.bestFilteredVolume.map((item, i) => {
@@ -81,10 +105,10 @@ function App() {
                 <Box
                   key={i}
                   item={item}
-                  handleID={(item) => { console.log(item); handleBoxSelection(item, i, itemsColors.colors[item.dst_code]) }}
+                  handleID={(item) => { handleBoxSelection(item, i, itemsColors.colors[item.dst_code]) }}
                   color={itemsColors.colors[item.dst_code]} />)
             })}
-            <OrbitControls screenSpacePanning maxDistance={20} />
+            <OrbitControls maxDistance={20} />
           </Canvas>
         </Col>
         <Col sm={2} >
@@ -96,6 +120,18 @@ function App() {
           <StatisticsPanel />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+          <CamControllerPanel changeCamera={
+            (newType, newPosition, newFov, newOffsetX, newOffsetY, newOffsetZ) => {
+              setCameraState({
+                type: newType,
+                position: newPosition,
+                fov: newFov,
+                offsetX: newOffsetX,
+                offsetY: newOffsetY,
+                offsetZ: newOffsetZ
+              })
+            }
+          } />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
         </Col>
