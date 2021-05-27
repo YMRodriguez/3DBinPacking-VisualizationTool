@@ -7,27 +7,35 @@ import solsFiltered1 from './3bestSolsFiltered.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
+import SolutionController from './components/SolutionController';
 import { useEffect, useState, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Button } from 'antd';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-
+  // State managing the box in the second canvas.
   const [selectedItem, setSelectedItem] = useState({
     item: [],
     color: "",
     id: ""
   })
 
-  // State for the truck
+  // State for the truck (TODO, get the truck from the API)
   const [truck, setTruck] = useState({
     height: 2.45,
     width: 2.45,
     length: 13.6
+  })
+
+  // State for the packing method.
+  // 0 by default, 1 step by step.
+  const [packingMethod, setPackingMethod] = useState({
+    type: 0
   })
 
   const [placedItems, setPlacedItems] = useState({
@@ -41,6 +49,7 @@ function App() {
     //bestUnfilteredTax: solsUnFiltered1.taxability[0].placed
   })
 
+  // Pallete of colours.
   const [itemsColors, setColors] = useState({
     colors: ['#CC66FF',
       '#660000', '#663333', '#666600',
@@ -59,10 +68,12 @@ function App() {
     lookAtZ: "",
   })
 
-  // To update render of the second canvas after a box has been selected.
+  // Updates render of the second canvas after a box has been selected.
   useEffect(() => {
   }, [selectedItem])
 
+
+  // On the fly function component for custom views predefined by buttons.
   function CustomCamera(props) {
     const ref = useRef()
     const set = useThree(state => state.set)
@@ -77,7 +88,7 @@ function App() {
     return <perspectiveCamera ref={ref} {...props} />
   }
 
-  // Panel selection( future implementation)
+  // Select the box in the secondary panel.
   const handleBoxSelection = (item, i, color) => {
     setSelectedItem({ item: item, color: color, id: i })
   }
@@ -120,26 +131,27 @@ function App() {
           <StatisticsPanel />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
-
+          <SolutionController />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
           <CamControllerPanel changeCamera={(Type,
-            Position,
-            Fov,
-            lookAtX,
-            lookAtY,
-            lookAtZ) =>
+            Position, Fov, lookAtX, lookAtY, lookAtZ) =>
             setCameraState({
-              ...cameraState,
-              type: Type,
-              position: Position,
-              fov: Fov,
-              lookAtX: lookAtX,
-              lookAtY: lookAtY,
+              ...cameraState, type: Type, position: Position,
+              fov: Fov, lookAtX: lookAtX, lookAtY: lookAtY,
               lookAtZ: lookAtZ
             })
           }
           />
+          <Container fluid>
+            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 4 }}>
+              <p class="font-weight-bold"><u>Pack panel</u></p>
+            </Row>
+            <Row style={{ display: 'flex', justifyContent: 'center' }}>
+              <Button style={{ marginRight: '5px' }} type="primary"> Next Item</Button>
+              <Button type="primary"> Previous Item</Button>
+            </Row>
+          </Container>
         </Col>
       </Row>
     </Container >
