@@ -48,7 +48,7 @@ export default function FloatingPanel(props) {
                         borderRadius: 8,
                         borderColor: 'black',
                     }}>
-                    <PerspectiveCamera makeDefault position={[0, 0, 1.3]}></PerspectiveCamera>
+                    <PerspectiveCamera makeDefault position={[0, 0, 1.8]}></PerspectiveCamera>
                     <ambientLight intensity={0.75} />
                     <ProjectedBox
                         item={props.selectedItem.item}

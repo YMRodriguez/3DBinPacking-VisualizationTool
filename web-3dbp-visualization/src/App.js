@@ -3,7 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import solsFiltered1 from './3bestSolsFiltered.json';
+import solsFiltered1 from './7bestSolsUnfiltered.json';
+import statsData from './7bestStatsUnfiltered.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
@@ -39,7 +40,7 @@ function App() {
   })
 
   const [placedItems, setPlacedItems] = useState({
-    bestFilteredVolume: solsFiltered1.volume[1].placed,
+    bestFilteredVolume: solsFiltered1.volume[0].placed,
     //bestFilteredPrio: solsFiltered1.priority[0].placed,
     //bestFilteredWeight: solsFiltered1.weight[0].placed,
     //bestFilteredTax: solsFiltered1.taxability[0].placed,
@@ -47,6 +48,10 @@ function App() {
     //bestFilteredPrio: solsFiltered7.priority[0].placed,
     //bestUnfilteredWeight: solsUnFiltered1.weight[0].placed,
     //bestUnfilteredTax: solsUnFiltered1.taxability[0].placed
+  })
+
+  const [stats, setStats] = useState({
+    bestUnfilteredStatsVolume: statsData.volume[0]
   })
 
   // Pallete of colours.
@@ -70,6 +75,7 @@ function App() {
 
   // Updates render of the second canvas after a box has been selected.
   useEffect(() => {
+    console.log(stats)
   }, [selectedItem])
 
 
@@ -94,13 +100,13 @@ function App() {
   }
 
   return (
-    <Container fluid>
+    < Container fluid >
       <Row noGutters style={{ height: '70vh' }}>
         <Col sm={10} style={{ border: '2px solid black', borderRadius: 8 }}>
           <Canvas
             raycaster={{ linePrecision: 0.01 }}
             style={{
-              background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 55%, rgba(153,153,153,1) 110%)',
+              background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(176,190,197,1) 130%)',
               borderRadius: 8,
             }}>
             {cameraState.type !== 0 ? <CustomCamera position={cameraState.position}
@@ -127,13 +133,13 @@ function App() {
         </Col>
       </Row>
       <Row noGutters style={{ height: '30vh' }}>
-        <Col sm={8} style={{ border: '2px solid black', borderRadius: 8 }}>
-          <StatisticsPanel />
+        <Col sm={8} style={{ border: '2px solid black', borderRadius: 8, background: '#D1F2EB' }}>
+          <StatisticsPanel data={stats.bestUnfilteredStatsVolume} />
         </Col>
-        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#FFFDE7' }}>
           <SolutionController />
         </Col>
-        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8 }}>
+        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#E1F5FE' }}>
           <CamControllerPanel changeCamera={(Type,
             Position, Fov, lookAtX, lookAtY, lookAtZ) =>
             setCameraState({
