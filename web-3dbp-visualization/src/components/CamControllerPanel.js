@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function CamControllerPanel(props) {
     return (
         <Container fluid>
-            <Row style={{ display: 'flex', justifyContent: 'center' }}><p class="font-weight-bold"><u>Camera Panel</u></p></Row>
+            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 5 }}><p class="font-weight-bold"><u>Camera Panel</u></p></Row>
             <Row style={{ display: 'flex', justifyContent: 'center', paddingBottom: 2 }}>
                 <Button type="primary" style={{ marginRight: '5px' }} onClick={() => props.changeCamera(1, [9, 1, 6.5], 50, 1.5, 1, 6.5)}> Right</Button>
                 <Button type="primary" onClick={() => props.changeCamera(2, [-7.5, 1, 6.5], 50, 1.5, 1, 6.5)}> Left</Button>

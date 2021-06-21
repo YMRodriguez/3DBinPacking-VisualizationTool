@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function SolutionController(props) {
     return (
         <Container fluid>
-            <Row style={{ display: 'flex', justifyContent: 'center' }}><p class="font-weight-bold"><u>Solution By Parameter</u></p></Row>
+            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 5 }}><p class="font-weight-bold"><u>Solution By Parameter</u></p></Row>
             <Row style={{ display: 'flex', justifyContent: 'center', padding: 2 }}>
                 <Button style={{ marginRight: '5px' }} type="primary" > Volume</Button>
                 <Button type="primary" > Weight</Button>
@@ -14,10 +14,10 @@ export default function SolutionController(props) {
             <Row style={{ display: 'flex', justifyContent: 'center', padding: 2 }}>
                 <Button type="primary" > Volumetric Weight</Button>
             </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 4 }}><p class="font-weight-bold"><u>Packing</u></p></Row>
+            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 30 }}><p class="font-weight-bold"><u>Packing</u></p></Row>
             <Row style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button type="primary" style={{ marginRight: '5px' }} > Step by step </Button>
-                <Button type="primary" > Pack Full Solution </Button>
+                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => { if (props.method !== 0) { console.log("me sumo1"); props.updateCounter(props.counter + 1) } }}> Step by step </Button>
+                <Button type="primary" onClick={() => props.updatePacking(1)}> Pack Full Solution </Button>
             </Row>
         </Container>
     )

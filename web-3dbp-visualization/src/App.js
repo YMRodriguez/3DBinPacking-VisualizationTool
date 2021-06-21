@@ -3,8 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import solsFiltered1 from './7bestSolsUnfiltered.json';
-import statsData from './7bestStatsUnfiltered.json';
+import solsFiltered1 from './28bestSolsFiltered.json';
+import statsData from './28bestStatsFiltered.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
@@ -36,18 +36,15 @@ function App() {
   // State for the packing method.
   // 0 by default, 1 step by step.
   const [packingMethod, setPackingMethod] = useState({
-    type: 0
+    type: 0,
+  })
+
+  const [counterForPacking, setCounterForPacking] = useState({
+    counter: 0,
   })
 
   const [placedItems, setPlacedItems] = useState({
-    bestFilteredVolume: solsFiltered1.volume[0].placed,
-    //bestFilteredPrio: solsFiltered1.priority[0].placed,
-    //bestFilteredWeight: solsFiltered1.weight[0].placed,
-    //bestFilteredTax: solsFiltered1.taxability[0].placed,
-    //bestUnfilteredVolume: solsUnFiltered7.volume[0].placed,
-    //bestFilteredPrio: solsFiltered7.priority[0].placed,
-    //bestUnfilteredWeight: solsUnFiltered1.weight[0].placed,
-    //bestUnfilteredTax: solsUnFiltered1.taxability[0].placed
+    bestFilteredVolume: solsFiltered1.volume[0].placed
   })
 
   const [stats, setStats] = useState({
@@ -56,10 +53,10 @@ function App() {
 
   // Pallete of colours.
   const [itemsColors, setColors] = useState({
-    colors: ['#CC66FF',
+    colors: ['#99FF33', '#CC66FF',
       '#660000', '#663333', '#666600',
-      '#6699FF', '#99FF33', '#CCFFFF',
-      '#FFFF66', '#CC3366', '#CC9999']
+      '#6699FF', '#FFFF66', '#CCFFFF',
+      '#CC9999', '#CC3366']
   })
 
   // Change camera.
@@ -104,7 +101,7 @@ function App() {
       <Row noGutters style={{ height: '70vh' }}>
         <Col sm={10} style={{ border: '2px solid black', borderRadius: 8 }}>
           <Canvas
-            raycaster={{ linePrecision: 0.01 }}
+            raycaster={{ linePrecision: 0.1 }}
             style={{
               background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(176,190,197,1) 130%)',
               borderRadius: 8,
@@ -134,10 +131,13 @@ function App() {
       </Row>
       <Row noGutters style={{ height: '30vh' }}>
         <Col sm={8} style={{ border: '2px solid black', borderRadius: 8, background: '#D1F2EB' }}>
-          <StatisticsPanel data={stats.bestUnfilteredStatsVolume} />
+          <StatisticsPanel data={stats.bestUnfilteredStatsVolume} itemsPacked={placedItems.bestFilteredVolume} />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#FFFDE7' }}>
-          <SolutionController />
+          <SolutionController
+            method={packingMethod.type}
+            counter={counterForPacking.counter}
+            updateCounter={(updatedCounter) => { if (updatedCounter !== 0) { setCounterForPacking(updatedCounter) } }} />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#E1F5FE' }}>
           <CamControllerPanel changeCamera={(Type,
