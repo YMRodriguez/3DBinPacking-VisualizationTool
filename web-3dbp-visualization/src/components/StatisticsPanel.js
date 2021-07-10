@@ -62,11 +62,11 @@ export default function StatisticsPanel(props) {
     return (
         <Container fluid>
             <Col>
-                <Row style={{ display: 'flex', justifyContent: 'center' }}><p class="font-weight-bold"><u>STATS</u></p></Row>
                 <Row >
-                    <Col md={4} style={{ marginLeft: 30, }}>
+                    <Col md={4} style={{ marginLeft: 30 }}>
+                        <Row style={{ display: 'flex', justifyContent: 'center' }}><p class="font-weight-bold"><u>STATS</u></p></Row>
                         <Row style={{ padding: 7 }}>
-                            <Progress type="circle" percent={data.usedVol} width={110}
+                            <Progress type="circle" percent={data.usedVol} width={105}
                                 strokeColor={{
                                     '0%': '#CC0000',
                                     '100%': '#66CC00',
@@ -74,7 +74,7 @@ export default function StatisticsPanel(props) {
                             <h4 class="font-weight-bold">Used Volume</h4>
                         </Row>
                         <Row style={{ padding: 7, paddingTop: 10 }}>
-                            <Progress type="circle" percent={data.usedWei} width={110}
+                            <Progress type="circle" percent={data.usedWei} width={105}
                                 strokeColor={{
                                     '0%': '#108ee9',
                                     '100%': '#87d068',
@@ -82,7 +82,7 @@ export default function StatisticsPanel(props) {
                             <h4 class="font-weight-bold">Used Weight</h4>
                         </Row>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} style={{ paddingTop: 20 }}>
                         <Row style={{ display: 'flex', padding: 3, justifyContent: 'center', border: '1px solid black', borderRadius: 8, borderStyle: 'dotted' }}>
                             <h4 style={{ alignSelf: 'center' }}><p><em>Items packed: {data.items_p}</em></p></h4>
                         </Row>
