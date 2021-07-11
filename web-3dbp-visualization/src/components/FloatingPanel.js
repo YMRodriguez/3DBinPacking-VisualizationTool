@@ -6,7 +6,6 @@ import 'antd/dist/antd.css';
 import ProjectedBox from './ProjectedBox';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 
@@ -52,7 +51,7 @@ export default function FloatingPanel(props) {
                     <ambientLight intensity={0.75} />
                     <ProjectedBox
                         item={props.selectedItem.item}
-                        color={props.color} />
+                        color={props.selectedItem.color} />
                 </Canvas>
             </Row>
             <Row style={{ height: '45vh', border: '2px solid black', borderRadius: 8 }}>

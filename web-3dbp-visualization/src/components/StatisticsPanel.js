@@ -21,7 +21,6 @@ export default function StatisticsPanel(props) {
 
     function createPieData(packed) {
         let p = processPacked(packed)
-        console.log(Object.keys(p), Object.values(p))
         const data = {
             labels: Object.keys(p),
             datasets: [

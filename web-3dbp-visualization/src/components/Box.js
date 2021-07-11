@@ -7,7 +7,6 @@ export default function Box(props) {
     const mesh = useRef()
     // Set up state for the hovered and active state
     const [hovered, setHover] = useState(false)
-    const [active, setActive] = useState(false)
 
     // Box configuration
     var [width, height, length] = [props.item.width, props.item.height, props.item.length]

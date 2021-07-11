@@ -1,4 +1,4 @@
-import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
@@ -14,17 +14,16 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'antd';
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { selectItem, changePackingMethod, changeCounter } from './redux/actions';
 
 function App() {
+  const dispatch = useDispatch();
+
   // State managing the box in the second canvas.
-  const [selectedItem, setSelectedItem] = useState({
-    item: [],
-    color: "",
-    id: ""
-  })
+  const selectedItem = useSelector(state => state.selectedItem)
 
   // State for the truck (TODO, get the truck from the API)
   const [truck, setTruck] = useState({
@@ -35,13 +34,9 @@ function App() {
 
   // State for the packing method.
   // 0 by default, 1 step by step.
-  const [packingMethod, setPackingMethod] = useState({
-    type: 0,
-  })
+  const packingMethod = useSelector(state => state.packingMethod)
 
-  const [counterForPacking, setCounterForPacking] = useState({
-    counter: 0,
-  })
+  const counterForPacking = useSelector(state => state.counterForPacking)
 
   const [placedItems, setPlacedItems] = useState({
     bestFilteredVolume: solsFiltered1.volume[0].placed
@@ -70,12 +65,6 @@ function App() {
     lookAtZ: "",
   })
 
-  // Updates render of the second canvas after a box has been selected.
-  useEffect(() => {
-    console.log(stats)
-  }, [selectedItem])
-
-
   // On the fly function component for custom views predefined by buttons.
   function CustomCamera(props) {
     const ref = useRef()
@@ -89,11 +78,6 @@ function App() {
       void set({ camera: ref.current })
     }, [])
     return <perspectiveCamera ref={ref} {...props} />
-  }
-
-  // Select the box in the secondary panel.
-  const handleBoxSelection = (item, i, color) => {
-    setSelectedItem({ item: item, color: color, id: i })
   }
 
   return (
@@ -115,18 +99,28 @@ function App() {
             <ambientLight position={[10, 10, 10]} intensity={1.2} />
             <Axis dimensions={[truck.width, truck.height, truck.length]} />
             <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
-            {placedItems.bestFilteredVolume.map((item, i) => {
+            {packingMethod === 0 ? placedItems.bestFilteredVolume.map((item, i) => {
               return (
                 <Box
                   key={i}
                   item={item}
-                  handleID={(item) => { handleBoxSelection(item, i, itemsColors.colors[item.dst_code]) }}
+                  method={packingMethod}
+                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dst_code])) }}
+                  color={itemsColors.colors[item.dst_code]} />)
+            }) : placedItems.bestFilteredVolume.sort((a, b) => a.id_or - b.id_or).slice(0, counterForPacking).map((item, i) => {
+              return (
+                <Box
+                  key={i}
+                  item={item}
+                  method={packingMethod}
+                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dst_code])) }}
                   color={itemsColors.colors[item.dst_code]} />)
             })}
           </Canvas>
         </Col>
         <Col sm={2} >
-          <FloatingPanel selectedItem={selectedItem} color={selectedItem.color} />
+          <FloatingPanel selectedItem={selectedItem}
+          />
         </Col>
       </Row>
       <Row noGutters style={{ height: '30vh' }}>
@@ -135,9 +129,9 @@ function App() {
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#FFFDE7' }}>
           <SolutionController
-            method={packingMethod.type}
-            counter={counterForPacking.counter}
-            updateCounter={(updatedCounter) => { if (updatedCounter !== 0) { setCounterForPacking(updatedCounter) } }} />
+            method={packingMethod}
+            updatePacking={(x) => { if (x !== packingMethod) { dispatch(changePackingMethod(x)) } }}
+          />
         </Col>
         <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#E1F5FE' }}>
           <CamControllerPanel changeCamera={(Type,
@@ -154,8 +148,8 @@ function App() {
               <p class="font-weight-bold"><u>Pack panel</u></p>
             </Row>
             <Row style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button style={{ marginRight: '5px' }} type="primary"> Next Item</Button>
-              <Button type="primary"> Previous Item</Button>
+              <Button style={{ marginRight: '5px' }} type="primary" onClick={() => { if (counterForPacking < placedItems.bestFilteredVolume.length - 2 && packingMethod === 1) { console.log("hols"); dispatch(changeCounter(counterForPacking + 1)) } }}> Next Item</Button>
+              <Button type="primary" onClick={() => { if (counterForPacking > 0 && packingMethod === 1) { dispatch(changeCounter(counterForPacking - 1)) } }}> Previous Item</Button>
             </Row>
           </Container>
         </Col>

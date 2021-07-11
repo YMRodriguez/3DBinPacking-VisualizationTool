@@ -16,8 +16,8 @@ export default function SolutionController(props) {
             </Row>
             <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 30 }}><p class="font-weight-bold"><u>Packing</u></p></Row>
             <Row style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => { if (props.method !== 0) { console.log("me sumo1"); props.updateCounter(props.counter + 1) } }}> Step by step </Button>
-                <Button type="primary" onClick={() => props.updatePacking(1)}> Pack Full Solution </Button>
+                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => { if (props.method !== 1) { props.updatePacking(1) } }}> Step by step </Button>
+                <Button type="primary" onClick={() => { if (props.method === 1) { props.updatePacking(0) } }}> Pack Full Solution </Button>
             </Row>
         </Container>
     )
