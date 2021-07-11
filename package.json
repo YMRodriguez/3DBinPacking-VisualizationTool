@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-three-fiber": "^5.3.22",
+    "three": "^0.127.0"
+  }
+}
