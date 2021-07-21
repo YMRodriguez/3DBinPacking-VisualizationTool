@@ -3,8 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import solsFiltered1 from './24bestSolsFiltered.json';
-import statsData from './24bestStatsFiltered.json';
+import solsFiltered from './results/24bestSolsFiltered.json';
+import statsData from './results/24bestStatsFiltered.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
@@ -39,7 +39,7 @@ function App() {
   const counterForPacking = useSelector(state => state.counterForPacking)
 
   const [placedItems, setPlacedItems] = useState({
-    bestFilteredVolume: solsFiltered1.volume[0].placed
+    bestFilteredVolume: solsFiltered.volume[0].placed
   })
 
   const [stats, setStats] = useState({
