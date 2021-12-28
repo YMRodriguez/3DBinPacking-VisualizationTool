@@ -3,8 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import solsFiltered from './results/24bestSolsFiltered.json';
-import statsData from './results/24bestStatsFiltered.json';
+import solsFiltered from './resultsNew/17005625bestSolsUnfiltered.json';
+import statsData from './resultsNew/17005625bestStatsUnfiltered.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
@@ -105,16 +105,16 @@ function App() {
                   key={i}
                   item={item}
                   method={packingMethod}
-                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dst_code])) }}
-                  color={itemsColors.colors[item.dst_code]} />)
+                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dstCode])) }}
+                  color={itemsColors.colors[item.dstCode]} />)
             }) : placedItems.bestFilteredVolume.sort((a, b) => a.id_or - b.id_or).slice(0, counterForPacking).map((item, i) => {
               return (
                 <Box
                   key={i}
                   item={item}
                   method={packingMethod}
-                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dst_code])) }}
-                  color={itemsColors.colors[item.dst_code]} />)
+                  handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dstCode])) }}
+                  color={itemsColors.colors[item.dstCode]} />)
             })}
           </Canvas>
         </Col>

@@ -50,7 +50,7 @@ export default function StatisticsPanel(props) {
     }
 
     function processPacked(packed) {
-        let dstArr = packed.map(item => item.dst_code)
+        let dstArr = packed.map(item => item.dstCode)
         const counts = dstArr.reduce((acc, value) => ({
             ...acc,
             [value]: (acc[value] || 0) + 1

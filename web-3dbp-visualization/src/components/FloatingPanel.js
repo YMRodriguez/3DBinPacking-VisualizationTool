@@ -34,7 +34,13 @@ export default function FloatingPanel(props) {
         var d = []
         for (const [key, value] of Object.entries(props.selectedItem.item)) {
             if (key !== "pp_in" && key !== "pp_out" && key !== "subzones" && key !== "mass_center") {
-                d.push({ key: d.length + 1, attribute: key, value: value })
+                if (key === "name" || key === "description") {
+                    d.push({ key: d.length + 1, attribute: key, value: value })
+                } else if (key === 'feasibleOr') {
+                    d.push({ key: d.length + 1, attribute: key, value: Array.from(value) })
+                } else {
+                    d.push({ key: d.length + 1, attribute: key, value: Math.round(value * 100) / 100 })
+                }
             }
         }
         setItemData({ data: d })
