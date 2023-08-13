@@ -82,14 +82,9 @@ function App() {
 
   return (
     < Container fluid >
-      <Row noGutters style={{ height: '70vh' }}>
-        <Col sm={10} style={{ border: '2px solid black', borderRadius: 8 }}>
-          <Canvas
-            raycaster={{ linePrecision: 0.1 }}
-            style={{
-              background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(176,190,197,1) 130%)',
-              borderRadius: 8,
-            }}>
+      <Row noGutters className="upper-row">
+        <Col sm={10} className="canvas-col">
+          <Canvas raycaster={{ linePrecision: 0.1 }} className="canvas-style">
             {cameraState.type !== 0 ? <CustomCamera position={cameraState.position}
               fov={cameraState.fov} /> :
               <PerspectiveCamera makeDefault position={cameraState.position}>
@@ -123,17 +118,17 @@ function App() {
           />
         </Col>
       </Row>
-      <Row noGutters style={{ height: '30vh' }}>
-        <Col sm={8} style={{ border: '2px solid black', borderRadius: 8, background: '#D1F2EB' }}>
+      <Row noGutters className="lower-row">
+        <Col sm={8} className="statistics-col">
           <StatisticsPanel data={stats.bestUnfilteredStatsVolume} itemsPacked={placedItems.bestFilteredVolume} />
         </Col>
-        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#FFFDE7' }}>
+        <Col sm={2} className="solution-col">
           <SolutionController
             method={packingMethod}
             updatePacking={(x) => { if (x !== packingMethod) { dispatch(changePackingMethod(x)) } }}
           />
         </Col>
-        <Col sm={2} style={{ border: '2px solid black', borderRadius: 8, background: '#E1F5FE' }}>
+        <Col sm={2} className="cam-controller-col">
           <CamControllerPanel changeCamera={(Type,
             Position, Fov, lookAtX, lookAtY, lookAtZ) =>
             setCameraState({
@@ -143,13 +138,13 @@ function App() {
             })
           }
           />
-          <Container fluid>
-            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 4 }}>
+          <Container fluid className='button-container'>
+            <Row className='button-header'>
               <p class="font-weight-bold"><u>Pack panel</u></p>
             </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button style={{ marginRight: '5px' }} type="primary" onClick={() => { if (counterForPacking < placedItems.bestFilteredVolume.length - 2 && packingMethod === 1) { console.log("hols"); dispatch(changeCounter(counterForPacking + 1)) } }}> Next Item</Button>
-              <Button type="primary" onClick={() => { if (counterForPacking > 0 && packingMethod === 1) { dispatch(changeCounter(counterForPacking - 1)) } }}> Previous Item</Button>
+            <Row className='button-group'>
+              <Button className='next-btn' onClick={() => { if (counterForPacking < placedItems.bestFilteredVolume.length - 2 && packingMethod === 1) { console.log("hols"); dispatch(changeCounter(counterForPacking + 1)) } }}> Next Item</Button>
+              <Button className='prev-btn' onClick={() => { if (counterForPacking > 0 && packingMethod === 1) { dispatch(changeCounter(counterForPacking - 1)) } }}> Previous Item</Button>
             </Row>
           </Container>
         </Col>

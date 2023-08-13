@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { PerspectiveCamera } from '@react-three/drei';
 import { Table } from 'antd';
-import 'antd/dist/antd.css';
+import 'antd/dist/reset.css';
 import ProjectedBox from './ProjectedBox';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

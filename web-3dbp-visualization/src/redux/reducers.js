@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { SELECT_ITEM, CHANGE_PACKING_METHOD, CHANGE_COUNTER } from './actions';
-import produce from "immer";
+import { produce } from "immer";
 
 
 const selectItemReducer = produce((draft = {}, action = {}) => {

@@ -3,7 +3,10 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Chart, ArcElement } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+
+Chart.register(ArcElement);
 
 export default function StatisticsPanel(props) {
     const [data, setData] = useState({
