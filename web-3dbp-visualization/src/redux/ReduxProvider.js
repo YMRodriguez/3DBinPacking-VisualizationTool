@@ -15,7 +15,7 @@ export default class ReduxProvider extends React.Component {
                 color: ""
             },
             packingMethod: 0,
-            counterForPacking: 1,
+            counterForPacking: 0,
         };
         this.store = this.configureStore();
     }

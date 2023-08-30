@@ -30,12 +30,16 @@
 .canvas-col {
   border: 2px solid black;
   border-radius: 8px;
+  display: flex;
+  /* make it a flex container */
+  align-items: center;
+  /* center children vertically */
+  justify-content: center;
+  /* center children horizontally */
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(176, 190, 197, 1) 130%);
 }
 
-.canvas-style {
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(176, 190, 197, 1) 130%);
-  border-radius: 8px;
-}
+
 
 .lower-row {
   height: 30vh;
@@ -43,6 +47,7 @@
 
 .statistics-col,
 .solution-col,
+.uploads-col,
 .cam-controller-col {
   border: 2px solid black;
   border-radius: 8px;
@@ -72,10 +77,8 @@
 }
 
 .button-group {
+  display: flex;
   justify-content: center;
-  margin-right: 5px;
-}
-
-.next-btn {
-  margin-right: 5px;
+  align-items: center;
+  gap: 10px;
 }

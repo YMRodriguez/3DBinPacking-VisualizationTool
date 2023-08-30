@@ -7,7 +7,7 @@ import ProjectedBox from './ProjectedBox';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../App.css";
+import "../css/FloatingPanel.css";
 
 
 export default function FloatingPanel(props) {
@@ -46,13 +46,10 @@ export default function FloatingPanel(props) {
         setItemData({ data: d })
     }, [props.selectedItem])
     return (
-        <Container>
-            <Row style={{ border: '2px solid black', borderRadius: 8, height: '25vh' }}>
+        <Container className='container-border'>
+            <Row className='floating-panel-row'>
                 <Canvas
-                    style={{
-                        borderRadius: 8,
-                        borderColor: 'black',
-                    }}>
+                    className='floating-panel-canvas'>
                     <PerspectiveCamera makeDefault position={[0, 0, 1.8]}></PerspectiveCamera>
                     <ambientLight intensity={0.75} />
                     <ProjectedBox
@@ -60,7 +57,7 @@ export default function FloatingPanel(props) {
                         color={props.selectedItem.color} />
                 </Canvas>
             </Row>
-            <Row style={{ height: '45vh', border: '2px solid black', borderRadius: 8 }}>
+            <Row className='floating-panel-table-row'>
                 <Table
                     {...tableProps}
                     columns={columns}

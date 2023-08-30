@@ -1,0 +1,31 @@
+/* StatisticsPanel.css */
+
+.stats-header {
+    display: flex;
+    justify-content: center;
+}
+
+.stats-progress-row {
+    padding: 7px;
+}
+
+.stats-progress-row-top {
+    padding-top: 10px;
+}
+
+.bold-title {
+    font-weight: bold;
+}
+
+.border-box {
+    display: flex;
+    padding: 3px;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    border-style: dotted;
+}
+
+.center-text {
+    align-self: center;
+}

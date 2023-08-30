@@ -13,11 +13,11 @@ import { useEffect, useState, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Button } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
-import "./App.css";
+import "./css/App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { selectItem, changePackingMethod, changeCounter } from './redux/actions';
+import { selectItem, changePackingMethod } from './redux/actions';
+import UploadControls from './components/UploadControls';
 
 function App() {
   const dispatch = useDispatch();
@@ -84,7 +84,7 @@ function App() {
     < Container fluid >
       <Row noGutters className="upper-row">
         <Col sm={10} className="canvas-col">
-          <Canvas raycaster={{ linePrecision: 0.1 }} className="canvas-style">
+          <Canvas raycaster={{ linePrecision: 0.1 }}>
             {cameraState.type !== 0 ? <CustomCamera position={cameraState.position}
               fov={cameraState.fov} /> :
               <PerspectiveCamera makeDefault position={cameraState.position}>
@@ -113,19 +113,25 @@ function App() {
             })}
           </Canvas>
         </Col>
-        <Col sm={2} >
+        <Col xs={2} >
           <FloatingPanel selectedItem={selectedItem}
           />
         </Col>
       </Row>
       <Row noGutters className="lower-row">
-        <Col sm={8} className="statistics-col">
+        <Col sm={5} className="statistics-col">
           <StatisticsPanel data={stats.bestUnfilteredStatsVolume} itemsPacked={placedItems.bestFilteredVolume} />
+        </Col>
+        <Col sm={3} className="uploads-col">
+          <UploadControls />
         </Col>
         <Col sm={2} className="solution-col">
           <SolutionController
             method={packingMethod}
             updatePacking={(x) => { if (x !== packingMethod) { dispatch(changePackingMethod(x)) } }}
+            counterForPacking={counterForPacking}
+            dispatch={dispatch}
+            placedItems={placedItems}
           />
         </Col>
         <Col sm={2} className="cam-controller-col">
@@ -138,15 +144,6 @@ function App() {
             })
           }
           />
-          <Container fluid className='button-container'>
-            <Row className='button-header'>
-              <p class="font-weight-bold"><u>Pack panel</u></p>
-            </Row>
-            <Row className='button-group'>
-              <Button className='next-btn' onClick={() => { if (counterForPacking < placedItems.bestFilteredVolume.length - 2 && packingMethod === 1) { console.log("hols"); dispatch(changeCounter(counterForPacking + 1)) } }}> Next Item</Button>
-              <Button className='prev-btn' onClick={() => { if (counterForPacking > 0 && packingMethod === 1) { dispatch(changeCounter(counterForPacking - 1)) } }}> Previous Item</Button>
-            </Row>
-          </Container>
         </Col>
       </Row>
     </Container >

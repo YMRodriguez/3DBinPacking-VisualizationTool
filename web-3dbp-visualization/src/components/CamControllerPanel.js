@@ -1,27 +1,37 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { Button } from 'antd';
+import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../css/CamControllerPanel.css';
 
 export default function CamControllerPanel(props) {
     return (
-        <Container fluid>
-            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 5 }}><p class="font-weight-bold"><u>Camera Panel</u></p></Row>
-            <Row style={{ display: 'flex', justifyContent: 'center', paddingBottom: 2 }}>
-                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => props.changeCamera(1, [9, 1, 6.5], 50, 1.5, 1, 6.5)}> Right</Button>
-                <Button type="primary" onClick={() => props.changeCamera(2, [-7.5, 1, 6.5], 50, 1.5, 1, 6.5)}> Left</Button>
+        <Container>
+            <Row className='header-row'>
+                <Col s={12} className="header-col">
+                    <b>Camera Panel</b>
+                </Col>
             </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center', padding: 2 }}>
-                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => props.changeCamera(3, [1.5, 9, 6.5], 50, 1.25, 1.5, 6.5)}> Top</Button>
-                <Button type="primary" onClick={() => props.changeCamera(4, [1.5, -9, 6.5], 50, 1.25, 1.5, 6.5)}> Bottom</Button>
+            <Row className="button-row">
+                <Col xs={6}>
+                    <button className="antd-like-button top-button" onClick={() => props.changeCamera(3, [1.5, 9, 6.5], 50, 1.25, 1.5, 6.5)}> Top</button>
+                </Col>
+                <Col xs={6}>
+                    <button className="antd-like-button bottom-button" onClick={() => props.changeCamera(4, [1.5, -9, 6.5], 50, 1.25, 1.5, 6.5)}> Bottom</button>
+                </Col>
             </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center', padding: 2 }}>
-                <Button type="primary" style={{ marginRight: '5px' }} onClick={() => props.changeCamera(5, [1.5, 1.5, 17], 50, 1.5, 1.5, 13)}>Front</Button>
-                <Button type="primary" onClick={() => props.changeCamera(6, [1.5, 1.5, -4], 50, 1.5, 1.5, 0)}>Rear</Button>
+            <Row className="button-row">
+                <Col xs={6}>
+                    <button className="antd-like-button front-button" onClick={() => props.changeCamera(5, [1.5, 1.5, 17], 50, 1.5, 1.5, 13)}>Front</button>
+                </Col>
+                <Col xs={6}>
+                    <button className="antd-like-button rear-button" onClick={() => props.changeCamera(6, [1.5, 1.5, -4], 50, 1.5, 1.5, 0)}>Rear</button>
+                </Col>
             </Row>
-            <Row style={{ display: 'flex', justifyContent: 'center', padding: 2 }}>
-                <Button type="primary" onClick={() => props.changeCamera(0, [8, 3, 10], 50, "", "", "")}>Free(Default)</Button>
+            <Row className="button-row">
+                <Col xs={12}>
+                    <button className="antd-like-button free-button" onClick={() => props.changeCamera(0, [8, 3, 10], 50, "", "", "")}>Default free view</button>
+                </Col>
             </Row>
         </Container>
     )

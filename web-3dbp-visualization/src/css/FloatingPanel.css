@@ -1,0 +1,23 @@
+.floating-panel-row {
+    border-radius: 8px;
+    height: 25vh;
+}
+
+.container-border {
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.floating-panel-canvas {
+    border-radius: 8px;
+    border-color: black;
+}
+
+.floating-panel-table-row {
+    height: 45vh;
+    border-radius: 8px;
+}
+
+.floating-panel-table-row .ant-table {
+    width: 100%;
+}
