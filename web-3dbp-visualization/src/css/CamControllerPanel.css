@@ -46,11 +46,6 @@
     margin-left: 1%;
 }
 
-.right-button,
-.top-button,
-.front-button {
-    margin-right: 1%;
-}
 
 .left-button,
 .bottom-button,
@@ -62,6 +57,20 @@
 .antd-like-button {
     background-color: #1890ff;
     border: 1px solid #1890ff;
+    color: #fff;
+    padding: 10px;
+    width: calc(100% - 10px);
+    /* adjusted for small margins if any */
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.antd-like-button-default {
+    background-color: #ea3c3c;
+    border: 1px solid #ff1818;
     color: #fff;
     padding: 10px;
     width: calc(100% - 10px);

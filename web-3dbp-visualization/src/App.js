@@ -3,8 +3,8 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import Box from './components/Box';
 import TruckContainer from './components/TruckContainer';
 import Axis from './components/Axis';
-import solsFiltered from './resultsNew/31044012bestSolsUnfiltered.json';
-import statsData from './resultsNew/31044012bestStatsUnfiltered.json';
+import defaultSolution from './defaultResult/defaultSolution.json';
+import defaultStats from './defaultResult/defaultStats.json';
 import FloatingPanel from './components/FloatingPanel';
 import CamControllerPanel from './components/CamControllerPanel';
 import StatisticsPanel from './components/StatisticsPanel';
@@ -27,10 +27,16 @@ function App() {
 
   // State for the truck (TODO, get the truck from the API)
   const [truck, setTruck] = useState({
-    height: 2.45,
+    _id: "",
+    name: "",
+    length: 13.6,
     width: 2.45,
-    length: 13.6
-  })
+    height: 2.45,
+    volume: 0,
+    tonnage: 0,
+    n_wagon: 1,
+    refrigeration: 0
+  });
 
   // State for the packing method.
   // 0 by default, 1 step by step.
@@ -39,11 +45,16 @@ function App() {
   const counterForPacking = useSelector(state => state.counterForPacking)
 
   const [placedItems, setPlacedItems] = useState({
-    bestFilteredVolume: solsFiltered.volume[0].placed
+    bestFilteredVolume: defaultSolution.volume[0].placed
   })
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setTruck(prev => ({ ...prev, [name]: value }));
+  };
+
   const [stats, setStats] = useState({
-    bestUnfilteredStatsVolume: statsData.volume[0]
+    bestUnfilteredStatsVolume: defaultStats.volume[0]
   })
 
   // Pallete of colours.
@@ -78,6 +89,15 @@ function App() {
       void set({ camera: ref.current })
     }, [])
     return <perspectiveCamera ref={ref} {...props} />
+  }
+
+  function loadDefaultResults() {
+    setPlacedItems({
+      bestFilteredVolume: defaultSolution.volume[0].placed
+    });
+    setStats({
+      bestUnfilteredStatsVolume: defaultStats.volume[0]
+    });
   }
 
   return (
@@ -119,13 +139,13 @@ function App() {
         </Col>
       </Row>
       <Row noGutters className="lower-row">
-        <Col sm={5} className="statistics-col">
+        <Col sm={5} className="statistics-col col">
           <StatisticsPanel data={stats.bestUnfilteredStatsVolume} itemsPacked={placedItems.bestFilteredVolume} />
         </Col>
-        <Col sm={3} className="uploads-col">
-          <UploadControls />
+        <Col sm={3} className="uploads-col col">
+          <UploadControls truck={truck} handleInputChange={handleInputChange} />
         </Col>
-        <Col sm={2} className="solution-col">
+        <Col sm={1.8} className="solution-col col">
           <SolutionController
             method={packingMethod}
             updatePacking={(x) => { if (x !== packingMethod) { dispatch(changePackingMethod(x)) } }}
@@ -134,7 +154,7 @@ function App() {
             placedItems={placedItems}
           />
         </Col>
-        <Col sm={2} className="cam-controller-col">
+        <Col sm={2} className="cam-controller-col col">
           <CamControllerPanel changeCamera={(Type,
             Position, Fov, lookAtX, lookAtY, lookAtZ) =>
             setCameraState({
@@ -143,6 +163,7 @@ function App() {
               lookAtZ: lookAtZ
             })
           }
+            loadDefaultResults={loadDefaultResults}
           />
         </Col>
       </Row>

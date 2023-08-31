@@ -6,27 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/UploadControls.css';
 import Papa from 'papaparse';
 
-export default function UploadControls(props) {
+export default function UploadControls({ truck, handleInputChange }) {
     const [file, setFile] = useState(null);
-    const [truck, setTruck] = useState({
-        _id: "",
-        name: "",
-        length: 0,
-        width: 0,
-        height: 0,
-        volume: 0,
-        tonnage: 0,
-        n_wagon: 1,
-        refrigeration: 0
-    });
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setTruck(prev => ({ ...prev, [name]: value }));
     };
 
     const handleRunPacking = () => {
@@ -66,7 +50,7 @@ export default function UploadControls(props) {
                 };
 
                 // Send the data to the backend
-                fetch("/your-endpoint", {
+                fetch("/run-optimizer", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -129,7 +113,7 @@ export default function UploadControls(props) {
 
             {/* File Upload */}
             <Row className="button-row">
-                <Col xs={12}>
+                <Col xs={10} className='centered-col-content'>
                     <label htmlFor="file-upload" className="antd-like-button">
                         Upload Packages CSV
                     </label>
@@ -139,7 +123,7 @@ export default function UploadControls(props) {
 
             {/* Run Packing */}
             <Row className="button-row">
-                <Col xs={12}>
+                <Col xs={8} className='centered-col-content'>
                     <button className="antd-like-button bottom-button" onClick={handleRunPacking}> Run packing</button>
                 </Col>
             </Row>

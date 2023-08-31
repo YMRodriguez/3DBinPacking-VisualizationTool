@@ -43,6 +43,14 @@
 
 .lower-row {
   height: 30vh;
+  padding-top: 12px;
+  max-height: 29vh;
+  /* adjust this value as per your needs */
+}
+
+.lower-row>.col {
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 .statistics-col,

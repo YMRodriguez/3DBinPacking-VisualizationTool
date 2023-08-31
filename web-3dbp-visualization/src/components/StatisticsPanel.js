@@ -29,47 +29,51 @@ export default function StatisticsPanel(props) {
 
     return (
         <Container fluid>
-            <Col>
-                <Row>
-                    <Col md={4} className="stats-header">
-                        <Row className='header-row'>
-                            <Col xs={12} className="header-col">
-                                <b>Metrics</b>
-                            </Col>
-                        </Row>
-                        <Row className="stats-progress-row">
-                            <Progress type="circle" percent={data.usedVol} width={105}
-                                strokeColor={{
-                                    '0%': '#CC0000',
-                                    '100%': '#66CC00',
-                                }} />
-                            <h4 className="bold-title">Used Volume</h4>
-                        </Row>
-                        <Row className="stats-progress-row stats-progress-row-top">
-                            <Progress type="circle" percent={data.usedWei} width={105}
-                                strokeColor={{
-                                    '0%': '#108ee9',
-                                    '100%': '#87d068',
-                                }} />
-                            <h4 className="bold-title">Used Weight</h4>
-                        </Row>
-                    </Col>
-                    <Col md={4} style={{ paddingTop: 20 }}>
-                        <Row className="border-box">
-                            <h4 className="center-text"><em>Items packed: {data.items_p}</em></h4>
-                        </Row>
-                        <Row className="border-box">
-                            <h4><em>Items discarded: {data.items_d}</em></h4>
-                        </Row>
-                        <Row className="border-box">
-                            <h4><em>Total taxability: {data.pTax}</em></h4>
-                        </Row>
-                        <Row className="border-box">
-                            <h4><em>Total weight: {data.t_weight}</em></h4>
-                        </Row>
-                    </Col>
-                </Row>
-            </Col>
+            <Row className='header-row'>
+                <Col xs={12} className="header-col">
+                    <b>Metrics</b>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4} className="stats-header">
+
+                    <Row className="stats-progress-row">
+                        <Progress type="circle" percent={data.usedVol} width={105}
+                            strokeColor={{
+                                '0%': '#CC0000',
+                                '100%': '#66CC00',
+                            }} />
+                        <h4 className="bold-title">Used Volume</h4>
+                    </Row>
+
+                    <Row className="stats-progress-row stats-progress-row-top">
+                        <Progress type="circle" percent={data.usedWei} width={105}
+                            strokeColor={{
+                                '0%': '#108ee9',
+                                '100%': '#87d068',
+                            }} />
+                        <h4 className="bold-title">Used Weight</h4>
+                    </Row>
+                </Col>
+                <Col md={8} style={{ paddingTop: 20 }}>
+                    <table className="info-table">
+                        <tbody>
+                            <tr>
+                                <td className="label-cell"><em>Items packed:</em></td>
+                                <td className="value-cell">{data.items_p}</td>
+                            </tr>
+                            <tr>
+                                <td className="label-cell"><em>Items discarded:</em></td>
+                                <td className="value-cell">{data.items_d}</td>
+                            </tr>
+                            <tr>
+                                <td className="label-cell"><em>Total weight (KG):</em></td>
+                                <td className="value-cell">{data.t_weight}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Col>
+            </Row>
         </Container>
     )
 }

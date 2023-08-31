@@ -33,6 +33,11 @@ export default function CamControllerPanel(props) {
                     <button className="antd-like-button free-button" onClick={() => props.changeCamera(0, [8, 3, 10], 50, "", "", "")}>Default free view</button>
                 </Col>
             </Row>
+            <Row className="button-row">
+                <Col xs={12}>
+                    <button className="antd-like-button-default free-button" onClick={props.loadDefaultResults}>Random result</button>
+                </Col>
+            </Row>
         </Container>
     )
 }

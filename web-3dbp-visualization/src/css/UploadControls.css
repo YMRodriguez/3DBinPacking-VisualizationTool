@@ -40,6 +40,16 @@
     margin-top: 5px;
 }
 
+.centered-col-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This will center the children horizontally as well */
+    flex-direction: column;
+    /* Stack the children vertically */
+}
+
+
 .antd-like-button {
     width: 100%;
     padding: 10px;

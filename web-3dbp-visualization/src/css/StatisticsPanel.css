@@ -29,3 +29,24 @@
 .center-text {
     align-self: center;
 }
+
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.info-table .label-cell {
+    font-weight: bold;
+    background-color: #ebebeb;
+}
+
+.info-table .value-cell {
+    text-align: center;
+}

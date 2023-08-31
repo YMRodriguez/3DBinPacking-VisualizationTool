@@ -33,7 +33,7 @@ export default function SolutionController(props) {
             </Row>
             <Row className="center-row">
                 <Col sm={14}>
-                    <button className="antd-like-button" onClick={() => { if (method === 1) { updatePacking(0) } }}>Full Cargo Visualization</button>
+                    <button className="antd-like-button" onClick={() => { if (method === 1) { updatePacking(0) } }}>See Full Cargo </button>
                 </Col>
             </Row>
             <Container fluid className='button-container'>
@@ -47,10 +47,10 @@ export default function SolutionController(props) {
                         <button className="antd-like-button spaced-btn" onClick={() => { if (method !== 1) { updatePacking(1) } }}>Start</button>
                     </Col>
                     <Row className='button-group'>
-                        <Col sm={11}>
+                        <Col sm={12}>
                             <button className='prev-btn' onClick={() => handleNavigation('prev')}>Previous</button>
                         </Col>
-                        <Col sm={11}>
+                        <Col sm={10}>
                             <button className='next-btn' onClick={() => handleNavigation('next')}>Next</button>
                         </Col>
 
