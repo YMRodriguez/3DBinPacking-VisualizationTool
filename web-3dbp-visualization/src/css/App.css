@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.ant-table-header>table>thead>tr>th {
+  background-color: #99CCCC !important;
+}
+
+.upper-row {
+  height: 70vh;
+}
+
+.canvas-col {
+  border: 2px solid black;
+  border-radius: 8px;
+  display: flex;
+  /* make it a flex container */
+  align-items: center;
+  /* center children vertically */
+  justify-content: center;
+  /* center children horizontally */
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(176, 190, 197, 1) 130%);
+}
+
+
+
+.lower-row {
+  height: 30vh;
+  padding-top: 12px;
+  max-height: 29vh;
+  /* adjust this value as per your needs */
+}
+
+.lower-row>.col {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.statistics-col,
+.solution-col,
+.uploads-col,
+.cam-controller-col {
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.statistics-col {
+  background: #D1F2EB;
+}
+
+.solution-col {
+  background: #FFFDE7;
+}
+
+.cam-controller-col {
+  background: #E1F5FE;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.button-header {
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

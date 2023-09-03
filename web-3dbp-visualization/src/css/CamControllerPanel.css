@@ -1,0 +1,100 @@
+.header-row {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.header-col {
+    /* Updated styles for the Col component */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f4f4f4;
+    /* A subtler grey background */
+    color: black;
+    /* Ensures any direct text (or color inheritance) is black */
+    padding: 10px 0;
+    /* 10px padding on the top and bottom for some spacing */
+
+    border: 2px solid #b0b0b0;
+    /* Stronger grey border */
+    border-radius: 8px;
+    /* Rounded borders */
+    margin-bottom: 8px;
+
+}
+
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.right-button,
+.top-button,
+.front-button,
+.left-button,
+.rear-button,
+.free-button {
+    width: 48%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+
+.left-button,
+.bottom-button,
+.rear-button {
+    margin-left: 1%;
+}
+
+/* Styles for a normal button to look like antd primary button */
+.antd-like-button {
+    background-color: #1890ff;
+    border: 1px solid #1890ff;
+    color: #fff;
+    padding: 10px;
+    width: calc(100% - 10px);
+    /* adjusted for small margins if any */
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.antd-like-button-default {
+    background-color: #ea3c3c;
+    border: 1px solid #ff1818;
+    color: #fff;
+    padding: 10px;
+    width: calc(100% - 10px);
+    /* adjusted for small margins if any */
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.antd-like-button:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+.antd-like-button:active {
+    background-color: #096dd9;
+    border-color: #096dd9;
+}
+
+.antd-like-button:disabled {
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
+}
