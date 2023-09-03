@@ -35,7 +35,7 @@ export default function CamControllerPanel(props) {
             </Row>
             <Row className="button-row">
                 <Col xs={12}>
-                    <button className="antd-like-button-default free-button" onClick={props.loadDefaultResults}>Random result</button>
+                    <button className="antd-like-button-default free-button" onClick={props.loadDefaultResults}>Load random result</button>
                 </Col>
             </Row>
         </Container>

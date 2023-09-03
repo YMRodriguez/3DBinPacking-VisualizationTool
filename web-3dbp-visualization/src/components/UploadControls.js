@@ -4,10 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/UploadControls.css';
-import Papa from 'papaparse';
+import Modal from 'react-modal';
 
-export default function UploadControls({ truck, handleInputChange }) {
+
+export default function UploadControls({ truck, handleInputChange, onNewData }) {
     const [file, setFile] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
@@ -18,31 +21,13 @@ export default function UploadControls({ truck, handleInputChange }) {
             alert("Please upload a CSV file.");
             return;
         }
+        setIsLoading(true);
 
-        // Parse the CSV
-        Papa.parse(file, {
-            complete: (result) => {
-                // Transform CSV data to your JSON structure here...
-                let packets = result.data.map(item => {
-                    return {
-                        id: item.id,
-                        description: item.description,
-                        length: parseFloat(item.length),
-                        destination_id: item.route ? item.route.destination_id : "",
-                        name: item.name,
-                        width: parseFloat(item.width),
-                        height: parseFloat(item.height),
-                        weight: parseFloat(item.weight),
-                        fragility: item.cargo_constraints ? item.cargo_constraints.breakability : "",
-                        volume: parseFloat(item.width) * parseFloat(item.height) * parseFloat(item.length),
-                        or: 6,
-                        dstCode: item.route ? item.route.destination_id : "",
-                        priority: item.cargo_constraints ? item.cargo_constraints.priority : "",
-                        ADR: item.cargo_constraints ? item.cargo_constraints.adr : "",
-                        feasibleOr: item.cargo_constraints ? item.cargo_constraints.feasible_orientations : [],
-                        subgroupId: item.id
-                    };
-                });
+        // Read the JSON file
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                let packets = JSON.parse(event.target.result);
 
                 let dataToSend = {
                     packets,
@@ -50,18 +35,36 @@ export default function UploadControls({ truck, handleInputChange }) {
                 };
 
                 // Send the data to the backend
-                fetch("/run-optimizer", {
+                fetch("http://127.0.0.1:5000/run-optimizer", {
                     method: "POST",
+                    mode: 'cors',
+                    credentials: 'same-origin',
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(dataToSend)
                 }).then(response => response.json())
                     .then(data => {
-                        // Handle the response...
+                        setIsLoading(false);
+                        console.log(data);
+                        if (!data.solutions.length) {
+                            alert("No solution found that satisfies your constraints. Please try again. In the meantime, we have loaded a solution that would fit without satisfying the constraints");
+                            onNewData(data.solutionsUnfiltered[0].placed, data.statsUnfiltered[0]);
+                        } else {
+                            onNewData(data.solutions[0].placed, data.stats[0]);
+                        }
+                    })
+                    .catch(error => {
+                        setIsLoading(false);
+                        console.error(error);
+                        alert("There was an error processing your request.");
                     });
+            } catch (e) {
+                setIsLoading(false);
+                alert("Invalid JSON file format. Please check the file and try again.");
             }
-        });
+        };
+        reader.readAsText(file);
     };
 
     return (
@@ -115,18 +118,30 @@ export default function UploadControls({ truck, handleInputChange }) {
             <Row className="button-row">
                 <Col xs={10} className='centered-col-content'>
                     <label htmlFor="file-upload" className="antd-like-button">
-                        Upload Packages CSV
+                        Upload Packages JSON
                     </label>
-                    <input id="file-upload" type="file" accept=".csv" className="file-input" onChange={handleFileChange} />
+                    <input id="file-upload" type="file" accept=".json" className="file-input" onChange={handleFileChange} />
                 </Col>
             </Row>
 
             {/* Run Packing */}
             <Row className="button-row">
                 <Col xs={8} className='centered-col-content'>
-                    <button className="antd-like-button bottom-button" onClick={handleRunPacking}> Run packing</button>
+                    <button className={`antd-like-button ${file ? "file-uploaded" : ""}`} onClick={handleRunPacking}> Run packing</button>
                 </Col>
             </Row>
+
+            <Modal
+                isOpen={isLoading}
+                contentLabel="Loading Modal"
+                ariaHideApp={false}
+                className="modal-content"
+                overlayClassName="modal-overlay"
+            >
+                <div className="loading-icon"></div>
+                <p>Loading... Please wait until we process your solution. It can take up to 3 minutes.</p>
+                <p>If everything goes well the results will be displayed. You will be able to submit a new file after that.</p>
+            </Modal>
         </Container>
     );
 }

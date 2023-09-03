@@ -27,13 +27,13 @@ function App() {
 
   // State for the truck (TODO, get the truck from the API)
   const [truck, setTruck] = useState({
-    _id: "",
-    name: "",
+    _id: "container1",
+    name: "container",
     length: 13.6,
     width: 2.45,
     height: 2.45,
-    volume: 0,
-    tonnage: 0,
+    volume: 13.6 * 2.45 * 2.45,
+    tonnage: 22000,
     n_wagon: 1,
     refrigeration: 0
   });
@@ -45,16 +45,16 @@ function App() {
   const counterForPacking = useSelector(state => state.counterForPacking)
 
   const [placedItems, setPlacedItems] = useState({
-    bestFilteredVolume: defaultSolution.volume[0].placed
+    placedItems: defaultSolution.volume[0].placed
   })
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setTruck(prev => ({ ...prev, [name]: value }));
+    setTruck(prev => ({ ...prev, [name]: parseFloat(value) }));
   };
 
   const [stats, setStats] = useState({
-    bestUnfilteredStatsVolume: defaultStats.volume[0]
+    stats: defaultStats[0]
   })
 
   // Pallete of colours.
@@ -93,12 +93,22 @@ function App() {
 
   function loadDefaultResults() {
     setPlacedItems({
-      bestFilteredVolume: defaultSolution.volume[0].placed
+      placedItems: defaultSolution.volume[0].placed
     });
     setStats({
-      bestUnfilteredStatsVolume: defaultStats.volume[0]
+      stats: defaultStats[0]
     });
   }
+
+  function handleNewData(newPlacedItems, newStats) {
+    setPlacedItems({
+      placedItems: newPlacedItems
+    });
+    setStats({
+      stats: newStats
+    });
+  }
+
 
   return (
     < Container fluid >
@@ -114,7 +124,7 @@ function App() {
             <ambientLight position={[10, 10, 10]} intensity={1.2} />
             <Axis dimensions={[truck.width, truck.height, truck.length]} />
             <TruckContainer dimensions={[truck.width, truck.height, truck.length]} />
-            {packingMethod === 0 ? placedItems.bestFilteredVolume.map((item, i) => {
+            {packingMethod === 0 ? placedItems.placedItems.map((item, i) => {
               return (
                 <Box
                   key={i}
@@ -122,7 +132,7 @@ function App() {
                   method={packingMethod}
                   handleID={(item) => { dispatch(selectItem(item, itemsColors.colors[item.dstCode])) }}
                   color={itemsColors.colors[item.dstCode]} />)
-            }) : placedItems.bestFilteredVolume.sort((a, b) => a.id_or - b.id_or).slice(0, counterForPacking).map((item, i) => {
+            }) : placedItems.placedItems.sort((a, b) => a.id_or - b.id_or).slice(0, counterForPacking).map((item, i) => {
               return (
                 <Box
                   key={i}
@@ -140,10 +150,10 @@ function App() {
       </Row>
       <Row noGutters className="lower-row">
         <Col sm={5} className="statistics-col col">
-          <StatisticsPanel data={stats.bestUnfilteredStatsVolume} itemsPacked={placedItems.bestFilteredVolume} />
+          <StatisticsPanel data={stats.stats} itemsPacked={placedItems.placedItems} />
         </Col>
         <Col sm={3} className="uploads-col col">
-          <UploadControls truck={truck} handleInputChange={handleInputChange} />
+          <UploadControls truck={truck} handleInputChange={handleInputChange} onNewData={handleNewData} />
         </Col>
         <Col sm={1.8} className="solution-col col">
           <SolutionController
