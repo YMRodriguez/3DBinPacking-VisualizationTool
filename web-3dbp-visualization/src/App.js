@@ -59,10 +59,10 @@ function App() {
 
   // Pallete of colours.
   const [itemsColors, setColors] = useState({
-    colors: ['#99FF33', '#CC66FF',
+    colors: ['#99FF33', '#CC66FF', , '#FFFF66', '#CCFFFF',
+      '#CC9999', '#CC3366',
       '#660000', '#663333', '#666600',
-      '#6699FF', '#FFFF66', '#CCFFFF',
-      '#CC9999', '#CC3366']
+      '#6699FF']
   })
 
   // Change camera.

@@ -16,7 +16,7 @@ export default function SolutionController(props) {
         }
 
         // Navigate to the next or previous item
-        if (direction === 'next' && counterForPacking < placedItems.bestFilteredVolume.length - 2) {
+        if (direction === 'next' && counterForPacking < placedItems.placedItems.length - 2) {
             dispatch(changeCounter(counterForPacking + 1));
         } else if (direction === 'prev' && counterForPacking > 0) {
             dispatch(changeCounter(counterForPacking - 1));
